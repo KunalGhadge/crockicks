@@ -13,3 +13,7 @@ Thumbs.db
 .env.*
 .credentials/
 *.secret
+
+# Local test screenshots
+snap_*.png
+screenshot*.png
