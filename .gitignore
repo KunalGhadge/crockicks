@@ -17,3 +17,5 @@ Thumbs.db
 # Local test screenshots
 snap_*.png
 screenshot*.png
+val_*.png
+scratch/

@@ -68,8 +68,13 @@
   <!-- UNIFIED MASTER NAVIGATION BAR -->
   <div class="fixed top-0 left-0 right-0 z-50">
     <!-- Top Announcement Ribbon -->
-    <div class="w-full bg-primary text-on-primary py-1.5 px-4 text-center overflow-hidden border-b border-white/10 select-none">
-      <div class="w-full flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
+    <div class="w-full bg-primary text-on-primary py-1 sm:py-1.5 px-3 sm:px-4 text-center overflow-hidden border-b border-white/10 select-none">
+      <div class="w-full flex sm:hidden items-center justify-center font-label text-[10px] tracking-wider font-bold truncate">
+        <span class="text-tertiary-fixed">✦ ARCHIVE S/S 2025</span>
+        <span class="mx-1.5 opacity-40">•</span>
+        <span>FREE SHIPPING OVER $50</span>
+      </div>
+      <div class="w-full hidden sm:flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
         <span class="text-tertiary-fixed font-semibold">✦ ARCHIVE S/S 2025 DROP</span>
         <span class="opacity-40">•</span>
         <span>FREE SHIPPING ON ORDERS OVER $50</span>
@@ -79,11 +84,11 @@
     </div>
 
     <!-- Header Bar -->
-    <header class="w-full bg-surface-container-lowest/90 backdrop-blur-2xl border-b border-black/[0.04] shadow-sm">
-      <div class="h-20 w-full px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4 md:gap-6">
+    <header class="w-full bg-surface-container-lowest/95 backdrop-blur-2xl border-b border-black/[0.04] shadow-sm">
+      <div class="h-16 sm:h-20 w-full px-3 sm:px-6 lg:px-12 flex items-center justify-between gap-2 sm:gap-4 md:gap-6">
         <!-- Logo Branding (Logo Image Only) -->
         <a class="flex items-center group shrink-0" href="index.html" title="CrocKicks">
-          <img alt="CrocKicks Logo" class="h-10 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
+          <img alt="CrocKicks Logo" class="h-8 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
         </a>
 
         <!-- Global Smart Search -->
@@ -96,7 +101,7 @@
         </div>
 
         <!-- Header Controls -->
-        <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center gap-1.5 sm:gap-3">
           <nav class="hidden lg:flex items-center gap-6 pr-4 border-r border-outline/20 font-label text-xs uppercase tracking-wider font-bold">
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="product.html">
@@ -112,23 +117,64 @@
           </nav>
 
           <!-- Wishlist Button with Shared State -->
-          <button class="relative p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" onclick="CrocCart.toggleWishlistItem('prod-platform')" title="Wishlist">
+          <button class="relative p-2 sm:p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" onclick="CrocCart.toggleWishlistItem('prod-platform')" title="Wishlist">
             <span class="material-symbols-outlined text-xl" id="nav-wishlist-icon">favorite</span>
-            <span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center leading-none shadow-sm" id="wishlist-counter">2</span>
+            <span class="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 rounded-full bg-secondary text-white text-[9px] sm:text-[10px] font-bold flex items-center justify-center leading-none shadow-sm" id="wishlist-counter">2</span>
           </button>
 
           <!-- Cart Button Pill (Active state) -->
-          <a class="flex items-center gap-2 h-10 px-4 rounded-full bg-primary text-white hover:bg-secondary transition-all shadow-md active:scale-95 group shrink-0 ring-2 ring-secondary" href="cart.html" id="header-cart-pill">
-            <span class="material-symbols-outlined text-lg">shopping_bag</span>
+          <a class="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 rounded-full bg-primary text-white hover:bg-secondary transition-all shadow-md active:scale-95 group shrink-0 ring-2 ring-secondary" href="cart.html" id="header-cart-pill">
+            <span class="material-symbols-outlined text-base sm:text-lg">shopping_bag</span>
             <span class="font-label text-xs font-bold text-tertiary-fixed hidden sm:inline" id="header-cart-total">$0.00</span>
-            <span class="w-5 h-5 rounded-full bg-white/20 text-white font-label text-xs font-bold flex items-center justify-center transition-transform" id="header-cart-badge">0</span>
+            <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white/20 text-white font-label text-[10px] sm:text-xs font-bold flex items-center justify-center transition-transform" id="header-cart-badge">0</span>
           </a>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button id="mobile-menu-toggle-btn" class="lg:hidden p-1.5 sm:p-2 rounded-full hover:bg-surface-container text-primary transition-colors flex items-center justify-center" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" type="button">
+            <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Drawer -->
+      <div id="mobile-nav-drawer" class="lg:hidden hidden bg-surface-container-lowest/98 backdrop-blur-2xl border-t border-black/5 px-4 py-4 shadow-2xl transition-all duration-300">
+        <nav class="flex flex-col gap-1.5 font-label text-xs uppercase tracking-wider font-bold">
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html">
+            <span>Home</span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container text-on-surface-variant flex items-center justify-between" href="product.html">
+            <span class="flex items-center gap-1.5">
+              <span>Platform Atelier</span>
+              <span class="px-1.5 py-0.5 text-[9px] bg-secondary-fixed text-secondary rounded font-bold">+5cm</span>
+            </span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html#bestsellers">
+            <span>Classic Collection</span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="product.html#jibbitz-studio">
+            <span>Jibbitz™ Studio</span>
+            <span class="material-symbols-outlined text-sm text-outline">extension</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html#color-vault">
+            <span>Archive Color Vault</span>
+            <span class="material-symbols-outlined text-sm text-outline">palette</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl bg-surface-container text-primary flex items-center justify-between border-t border-black/5 mt-1 pt-3" href="cart.html">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              <span>Your Bag</span>
+            </span>
+            <span class="material-symbols-outlined text-sm text-outline">check</span>
+          </a>
+        </nav>
       </div>
     </header>
   </div>
 
-  <main class="w-full pt-28 bg-background min-h-screen">
+  <main class="w-full pt-[106px] sm:pt-[124px] bg-background min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       
       <!-- SHIPPING PROGRESS TELEMETRY -->

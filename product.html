@@ -69,8 +69,13 @@
   <!-- UNIFIED MASTER NAVIGATION BAR (Consistent with index.html) -->
   <div class="fixed top-0 left-0 right-0 z-50">
     <!-- Top Announcement Ribbon -->
-    <div class="w-full bg-primary text-on-primary py-1.5 px-4 text-center overflow-hidden border-b border-white/10 select-none">
-      <div class="w-full flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
+    <div class="w-full bg-primary text-on-primary py-1 sm:py-1.5 px-3 sm:px-4 text-center overflow-hidden border-b border-white/10 select-none">
+      <div class="w-full flex sm:hidden items-center justify-center font-label text-[10px] tracking-wider font-bold truncate">
+        <span class="text-tertiary-fixed">✦ ARCHIVE S/S 2025</span>
+        <span class="mx-1.5 opacity-40">•</span>
+        <span>FREE SHIPPING OVER $50</span>
+      </div>
+      <div class="w-full hidden sm:flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
         <span class="text-tertiary-fixed font-semibold">✦ ARCHIVE S/S 2025 DROP</span>
         <span class="opacity-40">•</span>
         <span>FREE SHIPPING ON ORDERS OVER $50</span>
@@ -80,11 +85,11 @@
     </div>
 
     <!-- Header Bar -->
-    <header class="w-full bg-surface-container-lowest/90 backdrop-blur-2xl border-b border-black/[0.04] shadow-sm">
-      <div class="h-20 w-full px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4 md:gap-6">
+    <header class="w-full bg-surface-container-lowest/95 backdrop-blur-2xl border-b border-black/[0.04] shadow-sm">
+      <div class="h-16 sm:h-20 w-full px-3 sm:px-6 lg:px-12 flex items-center justify-between gap-2 sm:gap-4 md:gap-6">
         <!-- Logo Branding (Logo Image Only) -->
         <a class="flex items-center group shrink-0" href="index.html" title="CrocKicks">
-          <img alt="CrocKicks Logo" class="h-10 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
+          <img alt="CrocKicks Logo" class="h-8 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
         </a>
 
         <!-- Global Smart Search -->
@@ -97,7 +102,7 @@
         </div>
 
         <!-- Header Controls -->
-        <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center gap-1.5 sm:gap-3">
           <nav class="hidden lg:flex items-center gap-6 pr-4 border-r border-outline/20 font-label text-xs uppercase tracking-wider font-bold">
             <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
             <a class="nav-link active text-primary flex items-center gap-1" href="product.html">
@@ -115,24 +120,69 @@
           </nav>
 
           <!-- Wishlist Button with Shared State -->
-          <button class="relative p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" onclick="CrocCart.toggleWishlistItem('prod-platform')" title="Wishlist">
+          <button class="relative p-2 sm:p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" onclick="CrocCart.toggleWishlistItem('prod-platform')" title="Wishlist">
             <span class="material-symbols-outlined text-xl" id="product-wishlist-icon">favorite</span>
-            <span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center leading-none shadow-sm" id="wishlist-badge">3</span>
+            <span class="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 rounded-full bg-secondary text-white text-[9px] sm:text-[10px] font-bold flex items-center justify-center leading-none shadow-sm" id="wishlist-badge">3</span>
           </button>
 
           <!-- Cart Button Pill -->
-          <a class="flex items-center gap-2 h-10 px-4 rounded-full bg-primary text-white hover:bg-secondary transition-all shadow-md active:scale-95 group shrink-0" href="cart.html" id="header-cart-pill">
-            <span class="material-symbols-outlined text-lg">shopping_bag</span>
+          <a class="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 rounded-full bg-primary text-white hover:bg-secondary transition-all shadow-md active:scale-95 group shrink-0" href="cart.html" id="header-cart-pill">
+            <span class="material-symbols-outlined text-base sm:text-lg">shopping_bag</span>
             <span class="font-label text-xs font-bold text-tertiary-fixed hidden sm:inline" id="cart-nav-total">$0.00</span>
-            <span class="w-5 h-5 rounded-full bg-white/20 text-white font-label text-xs font-bold flex items-center justify-center transition-transform" id="cart-badge-counter">0</span>
+            <span class="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white/20 text-white font-label text-[10px] sm:text-xs font-bold flex items-center justify-center transition-transform" id="cart-badge-counter">0</span>
           </a>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button id="mobile-menu-toggle-btn" class="lg:hidden p-1.5 sm:p-2 rounded-full hover:bg-surface-container text-primary transition-colors flex items-center justify-center" onclick="toggleMobileNav()" aria-label="Toggle navigation menu" type="button">
+            <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Drawer -->
+      <div id="mobile-nav-drawer" class="lg:hidden hidden bg-surface-container-lowest/98 backdrop-blur-2xl border-t border-black/5 px-4 py-4 shadow-2xl transition-all duration-300">
+        <nav class="flex flex-col gap-1.5 font-label text-xs uppercase tracking-wider font-bold">
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html">
+            <span>Home</span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-between" href="product.html">
+            <span class="flex items-center gap-1.5">
+              <span>Platform Atelier</span>
+              <span class="px-1.5 py-0.5 text-[9px] bg-secondary-fixed text-secondary rounded font-bold">+5cm</span>
+            </span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html#bestsellers">
+            <span>Classic Collection</span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="index.html#bestsellers">
+            <span>Foam Slides</span>
+            <span class="material-symbols-outlined text-sm text-outline">arrow_forward</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="#jibbitz-studio" onclick="toggleMobileNav()">
+            <span>Jibbitz™ Studio</span>
+            <span class="material-symbols-outlined text-sm text-outline">extension</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between" href="#color-vault-preview" onclick="toggleMobileNav()">
+            <span>Archive Color Vault</span>
+            <span class="material-symbols-outlined text-sm text-outline">palette</span>
+          </a>
+          <a class="py-2.5 px-3 rounded-xl hover:bg-surface-container transition-colors flex items-center justify-between border-t border-black/5 mt-1 pt-3" href="cart.html">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">receipt_long</span>
+              <span>Orders &amp; Bag</span>
+            </span>
+            <span class="material-symbols-outlined text-sm text-outline">shopping_bag</span>
+          </a>
+        </nav>
       </div>
     </header>
   </div>
 
   <!-- MAIN LAB STAGE (Balanced container scales, fixing zoomed feel) -->
-  <main class="w-full pt-28 bg-background min-h-screen">
+  <main class="w-full pt-[106px] sm:pt-[124px] bg-background min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       
       <!-- Breadcrumbs & Studio Meta Header -->
@@ -166,72 +216,82 @@
             <div class="absolute -left-16 -bottom-16 w-80 h-80 rounded-full blur-3xl pointer-events-none transition-all duration-700 opacity-50" id="hero-aura-secondary" style="background-color: rgba(254, 93, 57, 0.25);"></div>
 
             <!-- Floating Kinetic 3D Badges -->
-            <div class="absolute top-4 left-4 z-30 flex flex-col gap-2 pointer-events-none">
-              <span class="animate-float px-3.5 py-1.5 rounded-full bg-secondary-container text-white font-label text-xs uppercase tracking-widest font-bold shadow-lg border border-white/20 inline-flex items-center gap-1.5" id="hero-badge-1">
-                <span class="material-symbols-outlined text-sm">height</span>
-                +5 cm Elevated Sole
+            <div class="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-30 flex flex-col gap-1.5 sm:gap-2 pointer-events-none">
+              <span class="animate-float px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-secondary-container text-white font-label text-[10px] sm:text-xs uppercase tracking-wider font-bold shadow-md border border-white/20 inline-flex items-center gap-1 sm:gap-1.5" id="hero-badge-1">
+                <span class="material-symbols-outlined text-xs sm:text-sm">height</span>
+                <span>+5 cm Lift</span>
               </span>
-              <span class="animate-float px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label text-xs uppercase tracking-widest font-bold shadow-md border border-black/5 inline-flex items-center gap-1.5" style="animation-delay: -1.8s;">
+              <span class="hidden sm:inline-flex animate-float px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label text-xs uppercase tracking-widest font-bold shadow-md border border-black/5 items-center gap-1.5" style="animation-delay: -1.8s;">
                 <span class="material-symbols-outlined text-sm text-secondary">extension</span>
-                3 Free Jibbitz™ Charms
+                <span>3 Free Jibbitz™ Charms</span>
               </span>
             </div>
 
             <!-- High-Impact View Mode Switcher: Studio Photos vs Live Interactive 3D Model -->
-            <div class="absolute top-4 right-16 z-30 pointer-events-auto flex items-center p-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-black/10 font-label text-xs font-bold gap-1">
-              <button id="view-mode-photo-btn" onclick="setViewMode('photo')" type="button" class="px-3.5 py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1.5 shadow-sm hover:opacity-90 active:scale-95 cursor-pointer" title="Switch to High-Res Studio Photos">
-                <span class="material-symbols-outlined text-sm">photo_camera</span>
+            <div class="absolute top-2.5 right-12 sm:top-4 sm:right-16 z-30 pointer-events-auto flex items-center p-0.5 sm:p-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-black/10 font-label text-[10px] sm:text-xs font-bold gap-1">
+              <button id="view-mode-photo-btn" onclick="setViewMode('photo')" type="button" class="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1 shadow-sm hover:opacity-90 active:scale-95 cursor-pointer" title="Switch to High-Res Studio Photos">
+                <span class="material-symbols-outlined text-xs sm:text-sm">photo_camera</span>
                 <span class="hidden sm:inline">Studio Photos</span>
+                <span class="sm:hidden">Photos</span>
               </button>
               
               <!-- Glow-Pulse 3D Interactive Button (Magnetic Click Attraction) -->
-              <button id="view-mode-3d-btn" onclick="setViewMode('3d')" type="button" class="glow-3d-pulse relative px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50" title="Experience Live Interactive 3D WebGL Model">
-                <span class="relative flex h-2.5 w-2.5">
+              <button id="view-mode-3d-btn" onclick="setViewMode('3d')" type="button" class="glow-3d-pulse relative px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-1 sm:gap-1.5 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50" title="Experience Live Interactive 3D WebGL Model">
+                <span class="relative flex h-2 w-2">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </span>
-                <span class="material-symbols-outlined text-base animate-spin" style="animation-duration: 10s;">view_in_ar</span>
-                <span class="tracking-wider uppercase">3D Interactive</span>
-                <span class="px-1.5 py-0.5 rounded-full bg-white/25 text-[9px] font-black tracking-widest backdrop-blur-xs border border-white/30 hidden sm:inline">360° SPIN</span>
+                <span class="material-symbols-outlined text-sm sm:text-base animate-spin" style="animation-duration: 10s;">view_in_ar</span>
+                <span class="tracking-wider uppercase">3D Lab</span>
+                <span class="px-1.5 py-0.5 rounded-full bg-white/25 text-[8px] sm:text-[9px] font-black tracking-widest backdrop-blur-xs border border-white/30 hidden sm:inline">360° SPIN</span>
               </button>
             </div>
 
             <!-- Top Right Wishlist Action -->
-            <button aria-label="Add to wishlist" class="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface hover:text-secondary hover:scale-110 shadow-lg flex items-center justify-center transition-all border border-black/5 active:scale-90" onclick="CrocCart.toggleWishlistItem('prod-platform')" type="button">
-              <span class="material-symbols-outlined text-2xl">favorite</span>
+            <button aria-label="Add to wishlist" class="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface hover:text-secondary hover:scale-110 shadow-lg flex items-center justify-center transition-all border border-black/5 active:scale-90" onclick="CrocCart.toggleWishlistItem('prod-platform')" type="button">
+              <span class="material-symbols-outlined text-lg sm:text-2xl">favorite</span>
             </button>
 
             <!-- Central 3D Showcase Image Frame (Studio Photos Mode) -->
-            <div class="relative w-full h-full flex items-center justify-center p-6" id="product-canvas-container">
+            <div class="relative w-full h-full flex items-center justify-center p-4 sm:p-6" id="product-canvas-container">
               <img alt="CrocKicks Classic Platform Clog (+5cm)" class="w-full h-full object-contain transition-all duration-500 will-change-transform transform" id="main-product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX78HCGL0cRnINHirkJgmW4dLfaXj6xY8Ujl0vTCUFXIxk3A9I2a3WTF3MGTHxn81QnX6eIIKc3gG9X9oFrFcSyO6tYV0mPl_BwPzaq_GejoT4zvdUDa18v3OlZtpFsoaREmmPihW23F1U_k01UxbbMXifFgdC8z_szdB-bar7kCklsDXM1So4xKfL14AX7KBlVSrdwZXOEefUh5486WDmKOKW-pLJoBx-3BK3wtiC"/>
             </div>
 
             <!-- Central Interactive 3D Model Stage (Live WebGL / AR Mode) -->
             <div class="relative w-full h-full hidden items-center justify-center p-2" id="product-3d-container">
+              <!-- Animated 3D Loader -->
+              <div id="model-3d-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-md z-30 transition-opacity duration-300">
+                <div class="w-10 h-10 rounded-full border-3 border-secondary border-t-transparent animate-spin mb-2"></div>
+                <p class="font-label text-xs uppercase tracking-widest text-white font-bold">Spinning Up 3D Lab...</p>
+                <span class="text-[9px] text-white/70">WebGL 360° Real-Time Scan</span>
+              </div>
+
               <model-viewer
                 id="croc-3d-viewer"
-                src="assets/models/croc.glb"
+                data-src="assets/models/croc.glb"
                 alt="CrocKicks Interactive 3D Foam Clog"
                 camera-controls
                 auto-rotate
                 rotation-per-second="20deg"
-                shadow-intensity="1.8"
-                shadow-softness="0.5"
+                shadow-intensity="1.2"
+                shadow-softness="0.6"
                 exposure="0.75"
-                interaction-prompt="auto"
+                interaction-prompt="none"
+                loading="lazy"
+                power-preference="high-performance"
                 ar
                 ar-modes="webxr scene-viewer quick-look"
                 class="w-full h-full"
-                style="width: 100%; height: 100%; background: transparent;"
+                style="width: 100%; height: 100%; background: transparent; touch-action: pan-y;"
               >
                 <!-- Built-in AR View Button for Mobile -->
-                <button slot="ar-button" class="absolute bottom-4 left-4 z-40 px-3.5 py-1.5 rounded-full bg-primary text-white font-label text-xs font-bold flex items-center gap-1.5 shadow-xl hover:bg-secondary transition-all active:scale-95" type="button">
-                  <span class="material-symbols-outlined text-sm">view_in_ar</span>
-                  <span>View in Room (AR)</span>
+                <button slot="ar-button" class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-40 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-primary text-white font-label text-[11px] sm:text-xs font-bold flex items-center gap-1.5 shadow-xl hover:bg-secondary transition-all active:scale-95" type="button">
+                  <span class="material-symbols-outlined text-xs sm:text-sm">view_in_ar</span>
+                  <span>View in AR</span>
                 </button>
                 <!-- 3D Model Reset Camera Preset -->
-                <div class="absolute bottom-4 right-4 z-40 flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-md border border-black/5 font-label text-[11px] font-bold">
-                  <button class="px-2.5 py-1 rounded-full bg-primary text-white hover:bg-secondary transition-all flex items-center gap-1" onclick="reset3DCamera()" type="button">
+                <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-40 flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-md border border-black/5 font-label text-[10px] sm:text-[11px] font-bold">
+                  <button class="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-primary text-white hover:bg-secondary transition-all flex items-center gap-1" onclick="reset3DCamera()" type="button">
                     <span class="material-symbols-outlined text-xs">restart_alt</span>
                     <span>Reset 3D</span>
                   </button>
@@ -240,23 +300,23 @@
             </div>
 
             <!-- Floating Hero Stage 3D CTA Callout (Enticing Click Magnet in Photo Mode) -->
-            <div id="stage-3d-callout-container" class="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 pointer-events-auto">
-              <button onclick="setViewMode('3d')" type="button" class="glow-3d-pulse flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-neutral-950 via-primary to-neutral-900 text-white hover:text-white border-2 border-secondary-container shadow-2xl hover:scale-105 active:scale-95 transition-all group font-label text-xs font-bold cursor-pointer">
-                <span class="relative flex h-2.5 w-2.5">
+            <div id="stage-3d-callout-container" class="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-30 pointer-events-auto w-auto max-w-[94%]">
+              <button onclick="setViewMode('3d')" type="button" class="glow-3d-pulse flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-neutral-950 via-primary to-neutral-900 text-white hover:text-white border-2 border-secondary-container shadow-2xl hover:scale-105 active:scale-95 transition-all group font-label text-[11px] sm:text-xs font-bold cursor-pointer whitespace-nowrap">
+                <span class="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-90"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-container"></span>
+                  <span class="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-secondary-container"></span>
                 </span>
-                <span class="material-symbols-outlined text-lg text-secondary-container group-hover:rotate-45 transition-transform duration-300">view_in_ar</span>
+                <span class="material-symbols-outlined text-base sm:text-lg text-secondary-container group-hover:rotate-45 transition-transform duration-300">view_in_ar</span>
                 <span>EXPLORE IN 3D (360° SPIN)</span>
-                <span class="px-2 py-0.5 rounded-full bg-secondary-container text-white text-[10px] uppercase font-black tracking-wider shadow-sm">CLICK TO SPIN</span>
+                <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-secondary-container text-white text-[10px] uppercase font-black tracking-wider shadow-sm">CLICK TO SPIN</span>
               </button>
             </div>
 
             <!-- Interactive Drag & Orbit HUD Controls (Active in 3D Mode) -->
-            <div id="orbit-controls-container" class="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between pointer-events-none hidden">
-              <div class="pointer-events-auto flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md border border-black/5">
-                <span class="material-symbols-outlined text-base text-secondary animate-spin" style="animation-duration: 9s;">360</span>
-                <span class="font-label text-xs uppercase tracking-wider text-on-surface font-bold" id="orbit-angle-readout">Drag to Orbit (360°)</span>
+            <div id="orbit-controls-container" class="absolute bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 z-30 flex items-center justify-between pointer-events-none hidden">
+              <div class="pointer-events-auto flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full shadow-md border border-black/5">
+                <span class="material-symbols-outlined text-sm sm:text-base text-secondary animate-spin" style="animation-duration: 9s;">360</span>
+                <span class="font-label text-[10px] sm:text-xs uppercase tracking-wider text-on-surface font-bold" id="orbit-angle-readout">Drag to Orbit (360°)</span>
               </div>
 
               <!-- Orbit Quick-Presets -->
@@ -1521,11 +1581,32 @@
           modelContainer.classList.add('flex');
         }
 
+        const crocViewer = document.getElementById('croc-3d-viewer');
+        const modelLoader = document.getElementById('model-3d-loader');
+
+        // High-Performance Lazy Loader: only download & compile 33MB scan on demand
+        if (crocViewer && (!crocViewer.src || crocViewer.src === '')) {
+          if (modelLoader) {
+            modelLoader.classList.remove('hidden', 'opacity-0');
+          }
+          const targetSrc = crocViewer.getAttribute('data-src') || 'assets/models/croc.glb';
+          crocViewer.src = targetSrc;
+          crocViewer.addEventListener('load', () => {
+            if (modelLoader) {
+              modelLoader.classList.add('opacity-0');
+              setTimeout(() => modelLoader.classList.add('hidden'), 350);
+            }
+            applyColorTo3DModel(activeColorHex);
+          }, { once: true });
+        } else {
+          applyColorTo3DModel(activeColorHex);
+        }
+
         if (photoBtn) {
-          photoBtn.className = "px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5 text-xs font-bold cursor-pointer";
+          photoBtn.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1 text-[10px] sm:text-xs font-bold cursor-pointer";
         }
         if (modelBtn) {
-          modelBtn.className = "relative px-4 py-1.5 rounded-full bg-primary text-white ring-2 ring-secondary-container shadow-md transition-all flex items-center gap-2 text-xs font-black cursor-pointer";
+          modelBtn.className = "relative px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary text-white ring-2 ring-secondary-container shadow-md transition-all flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-black cursor-pointer";
           modelBtn.classList.remove('glow-3d-pulse');
         }
 
@@ -1544,9 +1625,6 @@
 
         if (orbitHud) orbitHud.innerText = 'Interactive 3D Active (Drag anywhere to Orbit)';
 
-        // Ensure active product color is applied to 3D model
-        applyColorTo3DModel(activeColorHex);
-
         CrocCart.showToast('🧊 3D Customizer Active! Drag anywhere to spin 360°, scroll to zoom.');
       } else {
         if (modelContainer) {
@@ -1556,10 +1634,10 @@
         if (photoContainer) photoContainer.classList.remove('hidden');
 
         if (photoBtn) {
-          photoBtn.className = "px-3.5 py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1.5 shadow-sm text-xs font-bold cursor-pointer";
+          photoBtn.className = "px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1 shadow-sm text-[10px] sm:text-xs font-bold cursor-pointer";
         }
         if (modelBtn) {
-          modelBtn.className = "glow-3d-pulse relative px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50 text-xs";
+          modelBtn.className = "glow-3d-pulse relative px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-1 sm:gap-1.5 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50 text-[10px] sm:text-xs";
         }
 
         if (stageCallout) stageCallout.classList.remove('hidden');

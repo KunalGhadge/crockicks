@@ -498,3 +498,20 @@ const CrocCart = (function () {
 })();
 
 window.CrocCart = CrocCart;
+
+function toggleMobileNav() {
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const icon = document.getElementById('mobile-menu-icon');
+  if (!drawer) return;
+  const isHidden = drawer.classList.contains('hidden');
+  if (isHidden) {
+    drawer.classList.remove('hidden');
+    if (icon) icon.innerText = 'close';
+    if (window.CrocCart) window.CrocCart.playAcousticPop(480);
+  } else {
+    drawer.classList.add('hidden');
+    if (icon) icon.innerText = 'menu';
+    if (window.CrocCart) window.CrocCart.playAcousticPop(380);
+  }
+}
+window.toggleMobileNav = toggleMobileNav;
