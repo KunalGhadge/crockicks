@@ -1,0 +1,248 @@
+/* =============================================================================
+   CrocKicks™ Digital Footwear — Unified Design System & Animation Engine
+   ============================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Cursor Follower Physics */
+.custom-cursor-dot,
+.custom-cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.15s ease-out;
+  will-change: left, top, width, height, transform;
+}
+
+/* 3D Tilt Card Container with Specular Light Overlay */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+  position: relative;
+  will-change: transform;
+}
+
+.tilt-card .specular-sheen,
+.tilt-card .specular-shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 280px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.42),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
+}
+
+.tilt-card:hover .specular-sheen,
+.tilt-card:hover .specular-shine {
+  opacity: 1;
+}
+
+/* Infinite Kinetic Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Floating Keyframe for Badges */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.8deg);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 4.2s ease-in-out infinite;
+}
+
+/* Radial Snap Particles */
+.snap-particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  animation: pop-fly 0.55s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+  z-index: 50;
+}
+
+@keyframes pop-fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Accordion Drawer Smooth Expansion */
+.accordion-drawer {
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Shimmer Gradient for Primary CTA */
+@keyframes btn-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.shimmer-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: btn-shimmer 2.2s infinite;
+}
+
+/* Flying item animation to cart */
+.fly-item-clone {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Item removing smooth transition */
+.item-removing {
+  animation: itemFadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes itemFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    max-height: 260px;
+    margin-bottom: 1.5rem;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+}
+
+/* Confetti canvas */
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Active Nav State */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link.active {
+  color: #000000;
+  font-weight: 800;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 2px;
+}
+
+/* Unified Aura Glow */
+.aura-glow {
+  transition: background 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s ease;
+}
+
+.charm-snap {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Google model-viewer WebGL Customizer */
+model-viewer {
+  --poster-color: transparent;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+model-viewer:focus,
+model-viewer:focus-visible {
+  outline: none;
+}
+
+/* High-Impact 3D Interactive Button Glow & Pulse Animation */
+@keyframes glow-3d {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(254, 93, 57, 0.6), 0 0 28px rgba(239, 193, 16, 0.35);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(254, 93, 57, 0.95), 0 0 42px rgba(239, 193, 16, 0.55);
+    transform: scale(1.04);
+  }
+}
+
+.glow-3d-pulse {
+  animation: glow-3d 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

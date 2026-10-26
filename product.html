@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>CrocKicks — Classic Platform Clog (+5cm) Customizer Lab</title>
+  <!-- Brand Favicon -->
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
+  <!-- Typography & Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000000",
+            "secondary": "#b42907",
+            "secondary-container": "#fe5d39",
+            "secondary-fixed": "#ffdad2",
+            "tertiary": "#735c00",
+            "tertiary-fixed": "#ffe087",
+            "tertiary-fixed-dim": "#efc110",
+            "tertiary-container": "#cfa600",
+            "background": "#f8f9fb",
+            "surface": "#f8f9fb",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "surface-container": "#edeef0",
+            "surface-container-high": "#e7e8ea",
+            "surface-variant": "#e1e2e4",
+            "outline": "#76777b",
+            "on-surface": "#191c1e",
+            "on-surface-variant": "#46464b",
+            "on-primary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans", "sans-serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"],
+            "label": ["Space Grotesk", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="js/products-data.js"></script>
+  <!-- Google model-viewer Engine for Interactive 3D & AR -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-secondary-container selection:text-white">
+
+  <!-- Custom Cursor Follower Physics -->
+  <div class="custom-cursor-dot w-2 h-2 bg-primary hidden md:block" id="cursor-dot"></div>
+  <div class="custom-cursor-ring w-9 h-9 border border-primary/40 bg-primary/5 backdrop-blur-[1px] hidden md:block transition-[width,height] duration-200" id="cursor-ring"></div>
+
+  <!-- Real-time Bag Notification Toast -->
+  <div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-primary text-on-primary px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-3 border border-white/20" id="cart-toast">
+    <span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-ping"></span>
+    <span class="text-sm font-label font-bold tracking-wide" id="toast-msg">Added to Bag!</span>
+    <span class="material-symbols-outlined text-sm text-tertiary-fixed">check_circle</span>
+  </div>
+
+  <!-- UNIFIED MASTER NAVIGATION BAR (Consistent with index.html) -->
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <!-- Top Announcement Ribbon -->
+    <div class="w-full bg-primary text-on-primary py-1.5 px-4 text-center overflow-hidden border-b border-white/10 select-none">
+      <div class="w-full flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
+        <span class="text-tertiary-fixed font-semibold">✦ ARCHIVE S/S 2025 DROP</span>
+        <span class="opacity-40">•</span>
+        <span>FREE SHIPPING ON ORDERS OVER $50</span>
+        <span class="opacity-40">•</span>
+        <span class="text-secondary-fixed">26-PORT SNAP DOCKING SYSTEM</span>
+      </div>
+    </div>
+
+    <!-- Header Bar -->
+    <header class="w-full bg-surface-container-lowest/90 backdrop-blur-2xl border-b border-black/[0.04] shadow-sm">
+      <div class="h-20 w-full px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4 md:gap-6">
+        <!-- Logo Branding (Logo Image Only) -->
+        <a class="flex items-center group shrink-0" href="index.html" title="CrocKicks">
+          <img alt="CrocKicks Logo" class="h-10 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
+        </a>
+
+        <!-- Global Smart Search -->
+        <div class="flex-1 max-w-md hidden md:block">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-4 text-outline text-lg pointer-events-none">search</span>
+            <input id="global-search" class="w-full h-10 pl-11 pr-12 rounded-full bg-surface-container-low border border-transparent focus:border-primary text-sm placeholder:text-outline focus:outline-none transition-all shadow-inner" placeholder="Search silhouettes, shades, charms..." type="text"/>
+            <span class="absolute right-3 font-label text-[10px] text-outline bg-surface px-1.5 py-0.5 rounded border border-outline/30 font-bold">⌘K</span>
+          </div>
+        </div>
+
+        <!-- Header Controls -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <nav class="hidden lg:flex items-center gap-6 pr-4 border-r border-outline/20 font-label text-xs uppercase tracking-wider font-bold">
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+            <a class="nav-link active text-primary flex items-center gap-1" href="product.html">
+              <span>Platform</span>
+              <span class="px-1.5 py-0.5 text-[9px] bg-secondary-fixed text-secondary rounded font-bold">+5cm</span>
+            </a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="index.html#bestsellers">Classic</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="index.html#bestsellers">Slides</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#jibbitz-studio">Jibbitz™</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors" href="#color-vault-preview">Vault</a>
+            <a class="nav-link text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="cart.html">
+              <span class="material-symbols-outlined text-sm">receipt_long</span>
+              <span>Orders</span>
+            </a>
+          </nav>
+
+          <!-- Wishlist Button with Shared State -->
+          <button class="relative p-2.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" onclick="CrocCart.toggleWishlistItem('prod-platform')" title="Wishlist">
+            <span class="material-symbols-outlined text-xl" id="product-wishlist-icon">favorite</span>
+            <span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center leading-none shadow-sm" id="wishlist-badge">3</span>
+          </button>
+
+          <!-- Cart Button Pill -->
+          <a class="flex items-center gap-2 h-10 px-4 rounded-full bg-primary text-white hover:bg-secondary transition-all shadow-md active:scale-95 group shrink-0" href="cart.html" id="header-cart-pill">
+            <span class="material-symbols-outlined text-lg">shopping_bag</span>
+            <span class="font-label text-xs font-bold text-tertiary-fixed hidden sm:inline" id="cart-nav-total">$0.00</span>
+            <span class="w-5 h-5 rounded-full bg-white/20 text-white font-label text-xs font-bold flex items-center justify-center transition-transform" id="cart-badge-counter">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- MAIN LAB STAGE (Balanced container scales, fixing zoomed feel) -->
+  <main class="w-full pt-28 bg-background min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      
+      <!-- Breadcrumbs & Studio Meta Header -->
+      <div class="w-full py-2 flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-2 font-label text-xs uppercase tracking-wider text-on-surface-variant">
+          <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+          <span class="text-outline/40">/</span>
+          <a class="hover:text-primary transition-colors" href="index.html#bestsellers" id="breadcrumb-category">Silhouettes</a>
+          <span class="text-outline/40">/</span>
+          <span class="text-primary font-bold" id="breadcrumb-title">Classic Platform Clog (+5cm)</span>
+        </div>
+        <div class="flex items-center gap-2 font-label text-xs">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-bold" id="product-series-badge">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            HIGH DEMAND DROP • 19 ARCHIVE COLORWAYS
+          </span>
+        </div>
+      </div>
+
+      <!-- PRODUCT SHOWCASE TWO-COLUMN WORKBENCH -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- LEFT COLUMN: 3D STUDIO SHOWCASE & SPECS (7 COLS) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <!-- Main Hero 360° Studio Showcase Stage -->
+          <div class="tilt-card relative w-full rounded-3xl bg-surface-container-lowest border border-black/[0.05] overflow-hidden shadow-xl aspect-[4/3] flex items-center justify-center group select-none cursor-grab active:cursor-grabbing" id="hero-interactive-stage">
+            <div class="specular-sheen"></div>
+
+            <!-- Ambient Dynamic Color Glow Aura -->
+            <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full blur-3xl pointer-events-none transition-all duration-700 opacity-60" id="hero-aura-glow" style="background-color: rgba(254, 226, 89, 0.45);"></div>
+            <div class="absolute -left-16 -bottom-16 w-80 h-80 rounded-full blur-3xl pointer-events-none transition-all duration-700 opacity-50" id="hero-aura-secondary" style="background-color: rgba(254, 93, 57, 0.25);"></div>
+
+            <!-- Floating Kinetic 3D Badges -->
+            <div class="absolute top-4 left-4 z-30 flex flex-col gap-2 pointer-events-none">
+              <span class="animate-float px-3.5 py-1.5 rounded-full bg-secondary-container text-white font-label text-xs uppercase tracking-widest font-bold shadow-lg border border-white/20 inline-flex items-center gap-1.5" id="hero-badge-1">
+                <span class="material-symbols-outlined text-sm">height</span>
+                +5 cm Elevated Sole
+              </span>
+              <span class="animate-float px-3.5 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label text-xs uppercase tracking-widest font-bold shadow-md border border-black/5 inline-flex items-center gap-1.5" style="animation-delay: -1.8s;">
+                <span class="material-symbols-outlined text-sm text-secondary">extension</span>
+                3 Free Jibbitz™ Charms
+              </span>
+            </div>
+
+            <!-- High-Impact View Mode Switcher: Studio Photos vs Live Interactive 3D Model -->
+            <div class="absolute top-4 right-16 z-30 pointer-events-auto flex items-center p-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-black/10 font-label text-xs font-bold gap-1">
+              <button id="view-mode-photo-btn" onclick="setViewMode('photo')" type="button" class="px-3.5 py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1.5 shadow-sm hover:opacity-90 active:scale-95 cursor-pointer" title="Switch to High-Res Studio Photos">
+                <span class="material-symbols-outlined text-sm">photo_camera</span>
+                <span class="hidden sm:inline">Studio Photos</span>
+              </button>
+              
+              <!-- Glow-Pulse 3D Interactive Button (Magnetic Click Attraction) -->
+              <button id="view-mode-3d-btn" onclick="setViewMode('3d')" type="button" class="glow-3d-pulse relative px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50" title="Experience Live Interactive 3D WebGL Model">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                </span>
+                <span class="material-symbols-outlined text-base animate-spin" style="animation-duration: 10s;">view_in_ar</span>
+                <span class="tracking-wider uppercase">3D Interactive</span>
+                <span class="px-1.5 py-0.5 rounded-full bg-white/25 text-[9px] font-black tracking-widest backdrop-blur-xs border border-white/30 hidden sm:inline">360° SPIN</span>
+              </button>
+            </div>
+
+            <!-- Top Right Wishlist Action -->
+            <button aria-label="Add to wishlist" class="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface hover:text-secondary hover:scale-110 shadow-lg flex items-center justify-center transition-all border border-black/5 active:scale-90" onclick="CrocCart.toggleWishlistItem('prod-platform')" type="button">
+              <span class="material-symbols-outlined text-2xl">favorite</span>
+            </button>
+
+            <!-- Central 3D Showcase Image Frame (Studio Photos Mode) -->
+            <div class="relative w-full h-full flex items-center justify-center p-6" id="product-canvas-container">
+              <img alt="CrocKicks Classic Platform Clog (+5cm)" class="w-full h-full object-contain transition-all duration-500 will-change-transform transform" id="main-product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX78HCGL0cRnINHirkJgmW4dLfaXj6xY8Ujl0vTCUFXIxk3A9I2a3WTF3MGTHxn81QnX6eIIKc3gG9X9oFrFcSyO6tYV0mPl_BwPzaq_GejoT4zvdUDa18v3OlZtpFsoaREmmPihW23F1U_k01UxbbMXifFgdC8z_szdB-bar7kCklsDXM1So4xKfL14AX7KBlVSrdwZXOEefUh5486WDmKOKW-pLJoBx-3BK3wtiC"/>
+            </div>
+
+            <!-- Central Interactive 3D Model Stage (Live WebGL / AR Mode) -->
+            <div class="relative w-full h-full hidden items-center justify-center p-2" id="product-3d-container">
+              <model-viewer
+                id="croc-3d-viewer"
+                src="assets/models/croc.glb"
+                alt="CrocKicks Interactive 3D Foam Clog"
+                camera-controls
+                auto-rotate
+                rotation-per-second="20deg"
+                shadow-intensity="1.8"
+                shadow-softness="0.5"
+                exposure="0.75"
+                interaction-prompt="auto"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                class="w-full h-full"
+                style="width: 100%; height: 100%; background: transparent;"
+              >
+                <!-- Built-in AR View Button for Mobile -->
+                <button slot="ar-button" class="absolute bottom-4 left-4 z-40 px-3.5 py-1.5 rounded-full bg-primary text-white font-label text-xs font-bold flex items-center gap-1.5 shadow-xl hover:bg-secondary transition-all active:scale-95" type="button">
+                  <span class="material-symbols-outlined text-sm">view_in_ar</span>
+                  <span>View in Room (AR)</span>
+                </button>
+                <!-- 3D Model Reset Camera Preset -->
+                <div class="absolute bottom-4 right-4 z-40 flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-md border border-black/5 font-label text-[11px] font-bold">
+                  <button class="px-2.5 py-1 rounded-full bg-primary text-white hover:bg-secondary transition-all flex items-center gap-1" onclick="reset3DCamera()" type="button">
+                    <span class="material-symbols-outlined text-xs">restart_alt</span>
+                    <span>Reset 3D</span>
+                  </button>
+                </div>
+              </model-viewer>
+            </div>
+
+            <!-- Floating Hero Stage 3D CTA Callout (Enticing Click Magnet in Photo Mode) -->
+            <div id="stage-3d-callout-container" class="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 pointer-events-auto">
+              <button onclick="setViewMode('3d')" type="button" class="glow-3d-pulse flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-neutral-950 via-primary to-neutral-900 text-white hover:text-white border-2 border-secondary-container shadow-2xl hover:scale-105 active:scale-95 transition-all group font-label text-xs font-bold cursor-pointer">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-90"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-container"></span>
+                </span>
+                <span class="material-symbols-outlined text-lg text-secondary-container group-hover:rotate-45 transition-transform duration-300">view_in_ar</span>
+                <span>EXPLORE IN 3D (360° SPIN)</span>
+                <span class="px-2 py-0.5 rounded-full bg-secondary-container text-white text-[10px] uppercase font-black tracking-wider shadow-sm">CLICK TO SPIN</span>
+              </button>
+            </div>
+
+            <!-- Interactive Drag & Orbit HUD Controls (Active in 3D Mode) -->
+            <div id="orbit-controls-container" class="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between pointer-events-none hidden">
+              <div class="pointer-events-auto flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md border border-black/5">
+                <span class="material-symbols-outlined text-base text-secondary animate-spin" style="animation-duration: 9s;">360</span>
+                <span class="font-label text-xs uppercase tracking-wider text-on-surface font-bold" id="orbit-angle-readout">Drag to Orbit (360°)</span>
+              </div>
+
+              <!-- Orbit Quick-Presets -->
+              <div class="pointer-events-auto hidden sm:flex items-center gap-1.5 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-full shadow-md border border-black/5 font-label text-[11px] font-bold">
+                <button class="px-2.5 py-1 rounded-full bg-primary text-white hover:bg-secondary transition-all" onclick="applyOrbitPreset(0)" type="button">3/4 Hero</button>
+                <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="applyOrbitPreset(1)" type="button">Side Profile</button>
+                <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="applyOrbitPreset(2)" type="button">Toe Ports</button>
+                <button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" onclick="applyOrbitPreset(3)" type="button">On-Model</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- View Angle Thumbnails Rail + 5th Dedicated 3D Model Tile -->
+          <div class="grid grid-cols-5 gap-2.5 sm:gap-3" id="thumb-rail">
+            <button class="thumb-btn photo-thumb tilt-card rounded-2xl overflow-hidden bg-surface-container-lowest border-2 border-primary aspect-square shadow-sm transition-all outline-none p-1.5 cursor-pointer" onclick="switchMainImage(0)" type="button">
+              <div class="specular-sheen"></div>
+              <img alt="Thumbnail 3/4 Studio View" class="w-full h-full object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKIvogMr0OxBt2nxRHPuNKtHIxBkxGcOoXdIl84jb402GtcAut3Q0ESy3r-WPV-oqmpF92UYlB_kC4Qd-jptorZWdE1Q38EIKTwcShgeIU-akPEY5tuNCR8YB-LmAVHhr441CbafVhsbFxRAlSowvc80hFvtIm_MEXCullJXR_Zy_rfolo899XSkep4Ha33Dg44kD-GxbqkPHuLkiBSPyh9-4foSQ6BfipmSOiZ_ex"/>
+            </button>
+            <button class="thumb-btn photo-thumb tilt-card rounded-2xl overflow-hidden bg-surface-container-lowest border border-black/10 opacity-70 hover:opacity-100 aspect-square shadow-sm transition-all outline-none p-1.5 cursor-pointer" onclick="switchMainImage(1)" type="button">
+              <div class="specular-sheen"></div>
+              <img alt="Thumbnail Side Sole Profile" class="w-full h-full object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATrZ7ywX96RA6UAfHvzS7rNbV-vrApkyYeNbcBwN2rERGTpIVw1zqfPP8sGHl2t_bdBiwfuKEwNOLGxHVoTW5v2aWh1zOZDIofLGevVFrHt_A_U5uEVexNXhyIwruDe7FqNt1z_SlC7U5SJ4rYhlIW326P_tHCnnCZH3DnPuydgGU04eQQMd_uL_GCUEmH7-3frp40_w-d0zxNU9dvW-i7pp4Sr96eCTFZ53267YOQ"/>
+            </button>
+            <button class="thumb-btn photo-thumb tilt-card rounded-2xl overflow-hidden bg-surface-container-lowest border border-black/10 opacity-70 hover:opacity-100 aspect-square shadow-sm transition-all outline-none p-1.5 cursor-pointer" onclick="switchMainImage(2)" type="button">
+              <div class="specular-sheen"></div>
+              <img alt="Thumbnail Top Perforation Ports" class="w-full h-full object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZKN1PJGV-HOdV0n0BK9fBUcq22AQdkFlY9eqSgVeDKRXbxej5184s1griEO8Oju1Z39X--IIXMmrX9eLY65zS927bqDqHQlXCzXjqHjT9-nJqdhDTD4RM7kpznQxQMfm89KlstrChp34gtmOUky1amkmMddtGySGMQ8Osj7hM-hUrVUfpu9RQqDgkm1dpCL2VHCUVKWFoxqW2FXlpXOIsPkiB1GNN1kCLtT3fVcP"/>
+            </button>
+            <button class="thumb-btn photo-thumb tilt-card rounded-2xl overflow-hidden bg-surface-container-lowest border border-black/10 opacity-70 hover:opacity-100 aspect-square shadow-sm transition-all outline-none p-1.5 cursor-pointer" onclick="switchMainImage(3)" type="button">
+              <div class="specular-sheen"></div>
+              <img alt="Thumbnail Model Lifestyle" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv7j9VOiK_Ct8res7HAU23aiUpQS8f3dpuRtDswlzd5UGB80B4VgGSsyvtbsi_iZ6-tXP3MmuQY1_q_frF8ov3cMAoqimLOABWaMxSVSgWV5yJ_9Z0fmMmVItCiWXq9NMSktTq0wGL-RRn6wq_ClUH7CeSzHCjWsaGta2B6h4a4wqOZZGDUHOy6sUCvdaUUrPBDRYTtWO6yTNpSscIdnAazz-ikR8e6c9MKb7H9DkY"/>
+            </button>
+            <!-- 5th Dedicated 3D Model Tile -->
+            <button id="thumb-3d-tile" class="thumb-btn tilt-card rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900 to-black border-2 border-secondary-container text-white flex flex-col items-center justify-center p-1.5 shadow-md hover:scale-105 hover:border-amber-400 transition-all outline-none group aspect-square relative cursor-pointer" onclick="setViewMode('3d')" type="button" title="Open Interactive 3D Model">
+              <div class="specular-sheen"></div>
+              <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-80"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span>
+              </span>
+              <span class="material-symbols-outlined text-2xl text-secondary-container group-hover:scale-125 transition-transform duration-300">view_in_ar</span>
+              <span class="font-label text-[10px] font-black text-white tracking-wider mt-1 uppercase">3D Lab</span>
+              <span class="font-label text-[8px] text-tertiary-fixed font-bold tracking-tight">360° Orbit</span>
+            </button>
+          </div>
+          </div>
+
+          <!-- Tactile Engineering Specs Bento Grid with 3D Tilt Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="product-specs-grid">
+            <div class="tilt-card p-4 rounded-2xl bg-surface-container-lowest border border-black/[0.04] shadow-sm flex flex-col gap-2">
+              <div class="specular-sheen"></div>
+              <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shadow-inner">
+                <span class="material-symbols-outlined text-xl">air</span>
+              </div>
+              <span class="font-headline font-bold text-sm text-primary">Max Airflow Compound</span>
+              <p class="font-body text-xs text-on-surface-variant">13 vented perforations purge water and heat in sub-seconds.</p>
+            </div>
+
+            <div class="tilt-card p-4 rounded-2xl bg-surface-container-lowest border border-black/[0.04] shadow-sm flex flex-col gap-2">
+              <div class="specular-sheen"></div>
+              <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shadow-inner">
+                <span class="material-symbols-outlined text-xl">height</span>
+              </div>
+              <span class="font-headline font-bold text-sm text-primary">+5cm Elevated Midsole</span>
+              <p class="font-body text-xs text-on-surface-variant">Featherlight high-rebound bio-EVA adds posture lift with zero drag.</p>
+            </div>
+
+            <div class="tilt-card p-4 rounded-2xl bg-surface-container-lowest border border-black/[0.04] shadow-sm flex flex-col gap-2">
+              <div class="specular-sheen"></div>
+              <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shadow-inner">
+                <span class="material-symbols-outlined text-xl">water_drop</span>
+              </div>
+              <span class="font-headline font-bold text-sm text-primary">100% Hydro-Ready</span>
+              <p class="font-body text-xs text-on-surface-variant">Buoyant closed-cell resin wipes spotless in seconds with soap &amp; water.</p>
+            </div>
+          </div>
+
+          <!-- Atelier Archive Lineup Showcase -->
+          <div class="tilt-card w-full rounded-3xl bg-surface-container-lowest border border-black/[0.05] p-5 shadow-sm overflow-hidden flex flex-col md:flex-row items-center gap-5">
+            <div class="specular-sheen"></div>
+            <img alt="S/S Lookbook Lineup" class="w-full md:w-48 h-32 object-cover rounded-2xl shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3M-iQYAsUOgS5yNzWXm0LTtYLkY-okQY4WIe7bRk50citbadW_kOvYLRgTRGNLN7MV2JM7mJanLKKDwH0FQP4C2ExcJIpPhGEfrgCJ-uI6_roV4yJkk6KTxWf2QiOYcArmcrdCIlgFDWlrENrDedcNizwdGoARyUiYspc1aieIfy8JbMEknpIVx22KUsDFdXL012Itn5-vRZxGem-eg1PDil-ys4-BgsPwuANeqsKEcGMv9r_bG1QL3rYvjIFX9ymefI"/>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-label text-[10px] uppercase font-bold tracking-widest text-secondary">The Atelier Runway</span>
+                <span class="px-2 py-0.5 rounded bg-tertiary-fixed font-label text-[10px] font-bold text-on-tertiary-fixed">6 New Silhouettes</span>
+              </div>
+              <h4 class="font-headline font-bold text-base text-primary">Architectural Foam Footwear Matrix</h4>
+              <p class="font-body text-xs text-on-surface-variant mt-1 leading-relaxed">Explore our elevated platform boot and sherpa slip variants from the 2025 showroom catalog.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: CONFIGURATOR WORKBENCH (5 COLS) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <!-- Title & Pricing Block -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold inline-flex items-center gap-1.5" id="product-demand-badge">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                In High Demand • Summer Vault Drop
+              </span>
+              <div class="flex items-center gap-1 text-tertiary">
+                <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="font-label text-xs text-primary font-bold" id="product-rating-text">4.92 (1,420 reviews)</span>
+              </div>
+            </div>
+
+            <h1 class="font-headline text-3xl sm:text-4xl font-extrabold tracking-tight text-primary leading-tight" id="product-title-text">
+              Classic Platform Clog
+            </h1>
+
+            <div class="flex items-baseline gap-3 pt-1">
+              <span class="font-headline text-3xl font-extrabold text-primary tracking-tight" id="unit-price-display">$59.99</span>
+              <span class="font-body text-base text-outline line-through" id="compare-price-display">$72.00</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label text-xs font-bold uppercase tracking-wider" id="discount-badge-display">Save 17%</span>
+              <span class="font-label text-xs text-tertiary font-bold ml-auto">+ 3 Free Charms</span>
+            </div>
+
+            <p class="font-body text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed" id="product-description-text">
+              Engineered with our ultra-cushioned Croslite™ bio-foam core and an audacious 50mm (+5cm) elevated platform base. Built for bold street fits, poolside ease, and limitless custom snap charms.
+            </p>
+          </div>
+
+          <!-- Colorway Swatch Matrix -->
+          <div class="flex flex-col gap-3 p-5 rounded-3xl bg-surface-container-lowest border border-black/[0.04] shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label text-xs uppercase tracking-wider text-primary font-bold">Selected Colorway</span>
+              <span class="font-label text-xs text-secondary font-bold" id="active-color-label">Rich Goldenrod Yellow</span>
+            </div>
+
+            <div class="flex items-center gap-3 flex-wrap pt-1" id="color-swatch-list">
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#EAB308] shadow-sm transition-all scale-110 flex items-center justify-center border-2 border-primary cursor-pointer" onclick="selectColor(this, 'Rich Goldenrod Yellow', '#EAB308', 'rgba(234, 179, 8, 0.45)', 0)" title="Rich Goldenrod Yellow" type="button">
+                <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+              </button>
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#DB2777] shadow-sm transition-all hover:scale-110 flex items-center justify-center border-2 border-transparent cursor-pointer" onclick="selectColor(this, 'Vivid Hot Pink', '#DB2777', 'rgba(219, 39, 119, 0.45)', 1)" title="Vivid Hot Pink" type="button">
+              </button>
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#059669] shadow-sm transition-all hover:scale-110 flex items-center justify-center border-2 border-transparent cursor-pointer" onclick="selectColor(this, 'Lush Emerald Green', '#059669', 'rgba(5, 150, 105, 0.45)', 2)" title="Lush Emerald Green" type="button">
+              </button>
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#7C3AED] shadow-sm transition-all hover:scale-110 flex items-center justify-center border-2 border-transparent cursor-pointer" onclick="selectColor(this, 'Electric Royal Violet', '#7C3AED', 'rgba(124, 58, 237, 0.45)', 3)" title="Electric Royal Violet" type="button">
+              </button>
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#1D4ED8] shadow-sm transition-all hover:scale-110 flex items-center justify-center border-2 border-transparent cursor-pointer" onclick="selectColor(this, 'Pacific Cobalt Blue', '#1D4ED8', 'rgba(29, 78, 216, 0.45)', 4)" title="Pacific Cobalt Blue" type="button">
+              </button>
+              <button class="color-dot relative w-10 h-10 rounded-full bg-[#18181B] shadow-sm transition-all hover:scale-110 flex items-center justify-center border-2 border-transparent cursor-pointer" onclick="selectColor(this, 'Deep Stealth Obsidian', '#18181B', 'rgba(24, 24, 27, 0.35)', 5)" title="Deep Stealth Obsidian" type="button">
+              </button>
+            </div>
+
+            <!-- Color Archive Callout -->
+            <div class="mt-1 pt-2 border-t border-black/[0.04] flex items-center justify-between font-label text-xs text-on-surface-variant">
+              <span>Want to see all 19 archive color swatches?</span>
+              <button class="text-secondary font-bold underline hover:text-primary transition-colors" onclick="toggleModal('archive-modal')" type="button">View 19-Color Vault</button>
+            </div>
+          </div>
+
+          <!-- Unisex Sizing Matrix -->
+          <div class="flex flex-col gap-3 p-5 rounded-3xl bg-surface-container-lowest border border-black/[0.04] shadow-sm">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold">Unisex Sizing</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container font-label text-[10px] font-bold text-on-surface-variant">US Standard</span>
+              </div>
+              <button class="font-label text-xs uppercase tracking-wider text-secondary underline font-bold hover:text-primary transition-colors" onclick="toggleModal('size-modal')" type="button">
+                Size Guide &amp; Fit
+              </button>
+            </div>
+
+            <div class="grid grid-cols-4 gap-2 pt-1" id="size-options">
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W5 / M3</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W6 / M4</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W7 / M5</button>
+              <button class="size-btn py-2 rounded-xl bg-primary text-white font-label text-xs font-bold transition-all text-center shadow-md border border-primary" onclick="selectSize(this)" type="button">W8 / M6 ★</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W9 / M7</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W10 / M8</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W11 / M9</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W12 / M10</button>
+            </div>
+
+            <div class="flex items-center gap-1.5 pt-1 font-body text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+              <span>Roomy relaxed fit. Sizing down recommended if between sizes.</span>
+            </div>
+          </div>
+
+          <!-- JIBBITZ DOCKING ENGINE -->
+          <div class="p-5 rounded-3xl bg-surface-container-lowest border border-black/[0.04] shadow-sm flex flex-col gap-4" id="jibbitz-studio">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-secondary-container text-white flex items-center justify-center shadow-sm">
+                  <span class="material-symbols-outlined text-base">extension</span>
+                </div>
+                <div>
+                  <h2 class="font-headline font-bold text-sm text-primary">Jibbitz™ Charm Studio</h2>
+                  <span class="font-label text-[10px] uppercase tracking-wider text-outline">Tactile Audio Snap Synthesizer</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label text-[10px] uppercase font-bold shadow-sm" id="free-charm-banner">
+                3 FREE Included
+              </span>
+            </div>
+
+            <p class="font-body text-xs text-on-surface-variant">
+              Tap charms below or click shoe ports to snap them in. WebAudio pop triggers with each connection!
+            </p>
+
+            <!-- Magnetic Charm Docking Bay (Sleek Clean Slot Grid) -->
+            <div class="relative w-full rounded-2xl bg-surface-container-low p-4 border border-black/5 shadow-inner flex flex-col gap-2.5">
+              <div class="flex items-center justify-between text-xs font-label">
+                <span class="uppercase tracking-wider text-outline font-bold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+                  <span>Shoe Docking Ports (6 Slots)</span>
+                </span>
+                <span class="text-[11px] text-on-surface-variant font-medium">Tap slot or charm below to dock</span>
+              </div>
+
+              <div class="grid grid-cols-6 gap-2" id="clog-canvas">
+                <!-- Slot 1 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-1" onclick="handlePortClick(1, event)" title="Docking Port #1">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#1</span>
+                </div>
+                <!-- Slot 2 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-2" onclick="handlePortClick(2, event)" title="Docking Port #2">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#2</span>
+                </div>
+                <!-- Slot 3 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-3" onclick="handlePortClick(3, event)" title="Docking Port #3">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#3</span>
+                </div>
+                <!-- Slot 4 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-4" onclick="handlePortClick(4, event)" title="Docking Port #4">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#4</span>
+                </div>
+                <!-- Slot 5 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-5" onclick="handlePortClick(5, event)" title="Docking Port #5">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#5</span>
+                </div>
+                <!-- Slot 6 -->
+                <div class="charm-port flex flex-col items-center justify-center aspect-square rounded-2xl bg-surface-container-lowest border-2 border-dashed border-black/15 hover:border-secondary transition-all cursor-pointer shadow-xs group p-1" id="port-6" onclick="handlePortClick(6, event)" title="Docking Port #6">
+                  <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+                  <span class="font-label text-[9px] text-outline mt-0.5">#6</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Available Charms Tray -->
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label text-[11px] uppercase tracking-wider text-on-surface-variant font-bold">Pick Your Charms (Tap to Snap):</span>
+                <button class="font-label text-[11px] text-secondary hover:underline font-bold" onclick="clearAllCharms()" type="button">Reset Ports</button>
+              </div>
+
+              <div class="grid grid-cols-6 gap-2" id="charm-button-grid">
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-smiley" onclick="toggleCharm('smiley', 'mood', '#FFE087', 'Smiley', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">mood</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Smiley</span>
+                </button>
+
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-moon" onclick="toggleCharm('moon', 'dark_mode', '#FFDAD2', 'Moon', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">dark_mode</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Moon</span>
+                </button>
+
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-controller" onclick="toggleCharm('controller', 'sports_esports', '#E3E2E6', 'Gamer', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-surface-variant flex items-center justify-center text-on-surface group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">sports_esports</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Gamer</span>
+                </button>
+
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-flower" onclick="toggleCharm('flower', 'local_florist', '#FFD027', 'Daisy', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-[#FFD027] flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">local_florist</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Daisy</span>
+                </button>
+
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-bolt" onclick="toggleCharm('bolt', 'bolt', '#FE5D39', 'Bolt', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">bolt</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Bolt</span>
+                </button>
+
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-star" onclick="toggleCharm('star', 'grade', '#CFA600', 'Star', event)" type="button">
+                  <div class="w-7 h-7 rounded-full bg-tertiary-container flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-xs">
+                    <span class="material-symbols-outlined text-base">grade</span>
+                  </div>
+                  <span class="font-label text-[10px] text-on-surface font-bold">Star</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Real-time Charm Bill Tally -->
+            <div class="flex items-center justify-between pt-2 border-t border-black/[0.04] font-label text-xs">
+              <span class="text-on-surface-variant">Selected Charms: <strong class="text-primary font-bold" id="charm-count">0</strong> / 6</span>
+              <span class="text-secondary font-bold" id="charm-extra-price">Free (3 Promo Applied)</span>
+            </div>
+          </div>
+
+          <!-- Primary CTAs & Express Checkout -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <!-- Quantity Capsule -->
+              <div class="h-12 sm:h-13 px-3 rounded-full bg-surface-container-lowest border border-black/10 shadow-sm flex items-center gap-2">
+                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold" onclick="adjustQty(-1)" type="button">-</button>
+                <span class="font-headline font-bold text-base text-primary px-2 select-none" id="order-qty">1</span>
+                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold" onclick="adjustQty(1)" type="button">+</button>
+              </div>
+
+              <!-- Add to Bag Shimmer CTA -->
+              <button class="relative overflow-hidden flex-1 h-12 sm:h-13 rounded-full bg-primary hover:bg-secondary text-white font-label text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all active:scale-[0.98] shimmer-active font-bold group" id="add-to-cart-btn" onclick="triggerAddToCart()" type="button">
+                <span class="material-symbols-outlined transition-transform group-hover:scale-110 text-lg">shopping_bag</span>
+                <span>Add To Bag • <span id="total-button-price">$59.99</span></span>
+              </button>
+            </div>
+
+            <!-- ShopPay Express Button -->
+            <button onclick="triggerFastCheckout()" class="w-full h-11 rounded-full bg-[#5A31F4] text-white font-label text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:brightness-110 transition-all active:scale-98 font-bold" type="button">
+              <span>Fast Checkout with</span>
+              <span class="font-bold tracking-tight text-base leading-none">ShopPay</span>
+            </button>
+          </div>
+
+          <!-- Smooth Accordion Drawers -->
+          <div class="flex flex-col divide-y divide-black/[0.05] bg-surface-container-lowest rounded-3xl shadow-sm border border-black/[0.04] p-5">
+            <!-- Drawer 1: Fit & Ergonomics -->
+            <div class="py-3">
+              <button class="w-full flex items-center justify-between text-left group" onclick="toggleAccordion('acc-fit')" type="button">
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold group-hover:text-secondary transition-colors">Fit &amp; Ergonomics</span>
+                <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-acc-fit">expand_more</span>
+              </button>
+              <div class="accordion-drawer overflow-hidden max-h-0 opacity-0 pt-0 font-body text-xs text-on-surface-variant space-y-2" id="acc-fit">
+                <p class="pt-2">Generous roomy fit designed with foot-conforming arch contours and deep heel cups. Articulated heel pivot strap for secure lockdown or forward relaxed slip-on.</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Platform Midsole Height: 50mm / 2.0 inches</li>
+                  <li>Dual-density Croslite™ footbed prevents fatigue</li>
+                  <li>Textured nodes stimulate circulation &amp; grip</li>
+                  <li>Extremely featherlight: 8.4 oz per shoe</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Drawer 2: Materials & Care -->
+            <div class="py-3">
+              <button class="w-full flex items-center justify-between text-left group" onclick="toggleAccordion('acc-mats')" type="button">
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold group-hover:text-secondary transition-colors">Materials &amp; Care</span>
+                <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-acc-mats">expand_more</span>
+              </button>
+              <div class="accordion-drawer overflow-hidden max-h-0 opacity-0 pt-0 font-body text-xs text-on-surface-variant space-y-2" id="acc-mats">
+                <p class="pt-2">Constructed with proprietary closed-cell resin Croslite™ formula that naturally resists odors and wipes spotless with cold water and soap.</p>
+                <p class="text-secondary font-medium">⚠️ Pro-tip: Keep out of hot summer sun in cars to maintain foam elasticity.</p>
+              </div>
+            </div>
+
+            <!-- Drawer 3: Shipping & Returns -->
+            <div class="py-3">
+              <button class="w-full flex items-center justify-between text-left group" onclick="toggleAccordion('acc-shipping')" type="button">
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold group-hover:text-secondary transition-colors">Free Shipping &amp; 30-Day Returns</span>
+                <span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300" id="icon-acc-shipping">expand_more</span>
+              </button>
+              <div class="accordion-drawer overflow-hidden max-h-0 opacity-0 pt-0 font-body text-xs text-on-surface-variant space-y-2" id="acc-shipping">
+                <p class="pt-2">Qualifies for Free Express Ground Delivery (2-4 business days). Orders placed before 2 PM EST ship same day.</p>
+                <p>30-day unworn returns and complimentary size exchanges with prepaid shipping labels included.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENTO SILHOUETTES COLLECTION -->
+      <div class="mt-16 pt-16 border-t border-black/[0.05]" id="color-vault-preview">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold block mb-1">Complete The Rotation</span>
+            <h2 class="font-headline font-extrabold text-2xl sm:text-3xl text-primary tracking-tight">More Fresh Platform Silhouettes</h2>
+          </div>
+          <a class="font-label text-xs uppercase tracking-wider text-primary hover:text-secondary flex items-center gap-1.5 font-bold transition-colors" href="index.html#bestsellers">
+            <span>View All Releases</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="related-silhouettes-grid">
+          <!-- Card 1 -->
+          <div class="tilt-card rounded-2xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all border border-black/[0.04] flex flex-col justify-between group">
+            <div class="specular-sheen"></div>
+            <div>
+              <div class="relative w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-3 flex items-center justify-center p-3">
+                <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label text-[10px] uppercase font-bold shadow-xs">Fleece Lined</span>
+                <img alt="Fleece Lined Bubblegum Clog" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3KheLygRcRvMF0mPV1pFRDP8Sd-vrmhymXvMls2O_Pp9N1eXHQzewUqGL1Bd4_l-JLQ-1AQzqsd4f7dyG7u_Ydlolnaaz6jJMieKJcJK0EmlVZ1q-cnDNMJMMUhridTGF9m6F525_q-qKIiwEbCteu5HprwOPeYh7-YcBQ69dPemfAIGjDDYDza_TowI5lKwvQnBTCGlBg_6YDpnRY0N6f7k2FuB38_RKZt1e2pP"/>
+              </div>
+              <span class="font-label text-xs text-secondary uppercase font-bold">Cozy Series</span>
+              <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1">Fleece Lined Bubblegum Clog</h3>
+            </div>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
+              <span class="font-headline font-extrabold text-base text-primary">$64.99</span>
+              <button class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('Fleece Bubblegum Clog', 64.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCp3KheLygRcRvMF0mPV1pFRDP8Sd-vrmhymXvMls2O_Pp9N1eXHQzewUqGL1Bd4_l-JLQ-1AQzqsd4f7dyG7u_Ydlolnaaz6jJMieKJcJK0EmlVZ1q-cnDNMJMMUhridTGF9m6F525_q-qKIiwEbCteu5HprwOPeYh7-YcBQ69dPemfAIGjDDYDza_TowI5lKwvQnBTCGlBg_6YDpnRY0N6f7k2FuB38_RKZt1e2pP')" type="button">
+                <span class="material-symbols-outlined text-base">add</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="tilt-card rounded-2xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all border border-black/[0.04] flex flex-col justify-between group">
+            <div class="specular-sheen"></div>
+            <div>
+              <div class="relative w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-3 flex items-center justify-center p-3">
+                <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label text-[10px] uppercase font-bold shadow-xs">Water Slide</span>
+                <img alt="Beach Slide in Aqua Mint" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzxK9EnoahCi2Wa5mRzjbOntFsoH0hWwYFs2eWzLg1WDP1fOq3QbQ2Xmqv8HNAMFYU2z4BptC13c0dLfqXJaTXCcErmJrxMN70qqBBd89K_BrT17SjYXLdfy7mPuZ7wGGnTpcEgjuAkRlAw21jopfnabW8D0XZ4RLB2eor7-ZxXntl2P20TbY4NEvBG8NlCWwA4LnNnY3YiHXQnbq4im2E_i6zgmUNuicK5sSrWV7d"/>
+              </div>
+              <span class="font-label text-xs text-tertiary uppercase font-bold">Pool &amp; Recovery</span>
+              <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1">Beach Slide in Aqua Mint</h3>
+            </div>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
+              <span class="font-headline font-extrabold text-base text-primary">$39.99</span>
+              <button class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('Aqua Beach Slide', 39.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCzxK9EnoahCi2Wa5mRzjbOntFsoH0hWwYFs2eWzLg1WDP1fOq3QbQ2Xmqv8HNAMFYU2z4BptC13c0dLfqXJaTXCcErmJrxMN70qqBBd89K_BrT17SjYXLdfy7mPuZ7wGGnTpcEgjuAkRlAw21jopfnabW8D0XZ4RLB2eor7-ZxXntl2P20TbY4NEvBG8NlCWwA4LnNnY3YiHXQnbq4im2E_i6zgmUNuicK5sSrWV7d')" type="button">
+                <span class="material-symbols-outlined text-base">add</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="tilt-card rounded-2xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all border border-black/[0.04] flex flex-col justify-between group">
+            <div class="specular-sheen"></div>
+            <div>
+              <div class="relative w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-3 flex items-center justify-center p-3">
+                <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-primary text-white font-label text-[10px] uppercase font-bold shadow-xs">Lug Boot</span>
+                <img alt="Crush Mid Lug Boot" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHoExLHrPfLItO3kwq-cYGRVz7cHPXCmM65T9yoh9O9LvrNEorlEP0WJMimL7slUdAumu5w2FoZ5_lHYviMrzWCwLTCyyHyAhO_lFmGrorswYyWO1HCKRGKkzWciuiXOC-hEFcqBqc9g4g5BKj_WXhJuXUOS2AAeRA-TcPRZZA6w7hGo3D-tIycGXf3M0Zk34Gpznb_qM2YpjFjrYtkiMIIUI32lDqXM35HWhtuxsD"/>
+              </div>
+              <span class="font-label text-xs text-on-surface-variant uppercase font-bold">Rain &amp; Mud Ready</span>
+              <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1">Crush Mid Lug Boot</h3>
+            </div>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
+              <span class="font-headline font-extrabold text-base text-primary">$79.99</span>
+              <button class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('Crush Lug Boot', 79.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHoExLHrPfLItO3kwq-cYGRVz7cHPXCmM65T9yoh9O9LvrNEorlEP0WJMimL7slUdAumu5w2FoZ5_lHYviMrzWCwLTCyyHyAhO_lFmGrorswYyWO1HCKRGKkzWciuiXOC-hEFcqBqc9g4g5BKj_WXhJuXUOS2AAeRA-TcPRZZA6w7hGo3D-tIycGXf3M0Zk34Gpznb_qM2YpjFjrYtkiMIIUI32lDqXM35HWhtuxsD')" type="button">
+                <span class="material-symbols-outlined text-base">add</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="tilt-card rounded-2xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all border border-black/[0.04] flex flex-col justify-between group">
+            <div class="specular-sheen"></div>
+            <div>
+              <div class="relative w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-3 flex items-center justify-center p-3">
+                <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-white font-label text-[10px] uppercase font-bold shadow-xs">Best Seller</span>
+                <img alt="Classic Clog Forest Pine" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTBVzKoVh5Ar4yQrCALYrdmS936W9-VMNhm2sh2tdzuuyYDU-uXcIqriczUBvH8-RLrQYmiV7r5eTWtefsDKyickGvjU-4Gsf5YgDAHStibHfVHcqbTugW66quprmkUrkQwBCZNXJh6NbQuguoBnQ4pawh0Ybg2kKfT0vkuU0u0qpBQ6uWV0dQldirGrp6AFNkVA_SHdzmHGCW2xWWg7VbjqartX5aFpq8nGGt9AWM"/>
+              </div>
+              <span class="font-label text-xs text-secondary uppercase font-bold">Everyday Core</span>
+              <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1">Classic Clog Forest Pine</h3>
+            </div>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
+              <span class="font-headline font-extrabold text-base text-primary">$49.99</span>
+              <button class="w-9 h-9 rounded-full bg-surface-container hover:bg-primary hover:text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('Classic Forest Pine', 49.99, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTBVzKoVh5Ar4yQrCALYrdmS936W9-VMNhm2sh2tdzuuyYDU-uXcIqriczUBvH8-RLrQYmiV7r5eTWtefsDKyickGvjU-4Gsf5YgDAHStibHfVHcqbTugW66quprmkUrkQwBCZNXJh6NbQuguoBnQ4pawh0Ybg2kKfT0vkuU0u0qpBQ6uWV0dQldirGrp6AFNkVA_SHdzmHGCW2xWWg7VbjqartX5aFpq8nGGt9AWM')" type="button">
+                <span class="material-symbols-outlined text-base">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY FEEDBACK MATRIX -->
+      <div class="mt-16 pt-16 mb-16">
+        <div class="bg-surface-container-lowest rounded-3xl p-6 lg:p-12 shadow-sm border border-black/[0.04]">
+          <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+            <div>
+              <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold block mb-1">Social Charm Fits</span>
+              <h2 class="font-headline font-extrabold text-2xl sm:text-3xl text-primary tracking-tight">Styled By The CrocKicks Community</h2>
+            </div>
+            <button class="px-6 h-11 rounded-full bg-surface-container hover:bg-primary hover:text-white font-label text-xs uppercase tracking-wider text-primary font-bold transition-all shadow-sm active:scale-95 flex items-center gap-2" onclick="CrocCart.playAcousticPop(); CrocCart.showToast('Upload modal opened!');" type="button">
+              <span class="material-symbols-outlined text-base">photo_camera</span>
+              <span>Upload Your Charm Setup</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="tilt-card rounded-2xl bg-surface-container-low p-5 flex flex-col gap-3 border border-black/[0.04]">
+              <div class="specular-sheen"></div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-0.5 text-tertiary">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span class="font-label text-xs text-secondary font-bold">Verified Buyer</span>
+              </div>
+              <p class="font-body text-xs text-primary font-medium leading-relaxed">"The +5cm height is unreal. Literally like walking on high-bounce marshmallows. I loaded 5 charms onto the yellow pair!"</p>
+              <div class="flex items-center gap-3 pt-2 mt-auto">
+                <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label text-xs text-primary font-bold border border-black/10">KL</div>
+                <div class="flex flex-col">
+                  <span class="font-label text-xs text-primary font-bold">Kendra L.</span>
+                  <span class="font-body text-[11px] text-on-surface-variant">Sunny Lemon • Size W8</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-card rounded-2xl bg-surface-container-low p-5 flex flex-col gap-3 border border-black/[0.04]">
+              <div class="specular-sheen"></div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-0.5 text-tertiary">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span class="font-label text-xs text-secondary font-bold">Verified Buyer</span>
+              </div>
+              <p class="font-body text-xs text-primary font-medium leading-relaxed">"Wore these for an all-day festival and my feet never ached once. Super easy to wipe clean after dirt and spilled drinks."</p>
+              <div class="flex items-center gap-3 pt-2 mt-auto">
+                <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label text-xs text-primary font-bold border border-black/10">MT</div>
+                <div class="flex flex-col">
+                  <span class="font-label text-xs text-primary font-bold">Marcus T.</span>
+                  <span class="font-body text-[11px] text-on-surface-variant">Jet Black • Size M10</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-card rounded-2xl bg-surface-container-low p-5 flex flex-col gap-3 border border-black/[0.04]">
+              <div class="specular-sheen"></div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-0.5 text-tertiary">
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span class="font-label text-xs text-secondary font-bold">Verified Buyer</span>
+              </div>
+              <p class="font-body text-xs text-primary font-medium leading-relaxed">"The free 3 charms promo was the deciding factor. The smiley and lightning bolt look so sick docked on the toe box!"</p>
+              <div class="flex items-center gap-3 pt-2 mt-auto">
+                <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-label text-xs text-primary font-bold border border-black/10">SC</div>
+                <div class="flex flex-col">
+                  <span class="font-label text-xs text-primary font-bold">Sofi C.</span>
+                  <span class="font-body text-[11px] text-on-surface-variant">Bubblegum Pink • Size W7</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS: SIZING GUIDE & 19 ARCHIVE CATALOG -->
+    <div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-md hidden items-center justify-center p-4 transition-all" id="size-modal">
+      <div class="bg-surface-container-lowest rounded-3xl max-w-lg w-full p-6 lg:p-8 shadow-2xl flex flex-col gap-4 border border-black/10">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary">straighten</span>
+            <h3 class="font-headline font-bold text-xl text-primary">Unisex Sizing Guide</h3>
+          </div>
+          <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="toggleModal('size-modal')" type="button">
+            <span class="material-symbols-outlined text-base">close</span>
+          </button>
+        </div>
+        <p class="font-body text-xs text-on-surface-variant">
+          CrocKicks Platform clogs fit relaxed with generous forefoot width. Reference the dual-size conversion below:
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-black/[0.05]">
+          <table class="w-full text-left font-body text-xs">
+            <thead>
+              <tr class="font-label uppercase bg-surface-container-low text-primary">
+                <th class="p-3">US Women</th>
+                <th class="p-3">US Men</th>
+                <th class="p-3">EU Size</th>
+                <th class="p-3">Foot Length</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black/[0.05] text-on-surface-variant">
+              <tr><td class="p-3 font-bold text-primary">W5</td><td class="p-3">M3</td><td class="p-3">35</td><td class="p-3">8.7"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W6</td><td class="p-3">M4</td><td class="p-3">36-37</td><td class="p-3">9.0"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W7</td><td class="p-3">M5</td><td class="p-3">37-38</td><td class="p-3">9.4"</td></tr>
+              <tr class="bg-secondary-fixed/40"><td class="p-3 font-bold text-secondary">W8</td><td class="p-3 font-bold text-secondary">M6</td><td class="p-3 font-bold text-secondary">38-39</td><td class="p-3 font-bold text-secondary">9.7" (Most Popular)</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W9</td><td class="p-3">M7</td><td class="p-3">39-40</td><td class="p-3">10.0"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W10</td><td class="p-3">M8</td><td class="p-3">41-42</td><td class="p-3">10.4"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W11</td><td class="p-3">M9</td><td class="p-3">42-43</td><td class="p-3">10.7"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">W12</td><td class="p-3">M10</td><td class="p-3">43-44</td><td class="p-3">11.0"</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="w-full h-11 rounded-full bg-primary text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors" onclick="toggleModal('size-modal')" type="button">
+          Got It, Return to Shoe
+        </button>
+      </div>
+    </div>
+
+    <!-- 19 Archive Modal -->
+    <div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-md hidden items-center justify-center p-4 transition-all" id="archive-modal">
+      <div class="bg-surface-container-lowest rounded-3xl max-w-2xl w-full p-6 lg:p-8 shadow-2xl flex flex-col gap-4 border border-black/10">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary">palette</span>
+            <h3 class="font-headline font-bold text-xl text-primary">19 Archive Colorways Catalog</h3>
+          </div>
+          <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="toggleModal('archive-modal')" type="button">
+            <span class="material-symbols-outlined text-base">close</span>
+          </button>
+        </div>
+        <p class="font-body text-xs text-on-surface-variant">
+          Complete archive lineup of 19 high-density chromatic shades available for custom order dispatch.
+        </p>
+        <div class="relative w-full max-h-96 overflow-y-auto rounded-2xl border border-black/10 p-2 bg-surface-container-low">
+          <img alt="Complete 19 Archive Colorways" class="w-full h-auto object-contain rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcYIvr-X7oKfm3crsidVLp1JZ1b6SsNYXo3a2rO8cwCx4f8pM9tdzNatjPF3Q15LpiMAz39C8H5-DoPYQfD7QfNALCTKxCbXRSvxYciM8AcNOyOQ40ScNSf75nK2SqcXzcYgEcjW8lMMH0QInVCyN6dZD751r1OYB_1uVD-uPkqXmoMzJT-dPfrQiMfg_TtZOr9xI-BkJ3uDjee0caepM0G3t5Y-TKaqQcw9NXr0z5Q0fAcbevDtgcn8wVLc7qxnsPvbY"/>
+        </div>
+        <button class="w-full h-11 rounded-full bg-primary text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors" onclick="toggleModal('archive-modal')" type="button">
+          Close Catalog
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- UNIFIED MASTER FOOTER (Consistent across all pages) -->
+  <footer class="w-full bg-surface-container-low pt-16 pb-8 border-t border-black/[0.04]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Newsletter Club -->
+      <div class="bg-surface-container-lowest rounded-2xl p-8 mb-12 shadow-sm border border-black/[0.04] flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="font-label text-xs uppercase tracking-widest text-secondary font-bold block mb-1">VIP Studio Access</span>
+          <h3 class="font-headline font-bold text-2xl text-primary">Get 15% off your first drop</h3>
+          <p class="font-body text-xs text-on-surface-variant">Early notification for secret warehouse releases and limited charm collabs.</p>
+        </div>
+        <form class="flex items-center gap-2 w-full md:w-auto" onsubmit="event.preventDefault(); CrocCart.playAcousticPop(); CrocCart.showToast('Subscribed! Use code KICK15 for 15% off.');">
+          <input class="h-11 px-4 rounded-full bg-surface-container border-0 text-sm focus:ring-2 focus:ring-primary w-full sm:w-72" placeholder="Enter your email..." required="" type="email"/>
+          <button class="h-11 px-6 rounded-full bg-primary text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors" type="submit">Join</button>
+        </form>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
+        <div>
+          <h4 class="font-label text-xs uppercase tracking-wider text-primary font-bold mb-3">Categories</h4>
+          <ul class="space-y-2 text-xs text-on-surface-variant">
+            <li><a href="index.html#bestsellers" class="hover:text-primary transition-colors">Classic Clogs</a></li>
+            <li><a href="product.html" class="hover:text-primary transition-colors">Platform Lift (+5cm)</a></li>
+            <li><a href="index.html#bestsellers" class="hover:text-primary transition-colors">Beach &amp; Pool Slides</a></li>
+            <li><a href="#jibbitz-studio" class="hover:text-primary transition-colors">Jibbitz™ Charms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label text-xs uppercase tracking-wider text-primary font-bold mb-3">Studio &amp; Lab</h4>
+          <ul class="space-y-2 text-xs text-on-surface-variant">
+            <li><a href="product.html" class="hover:text-primary transition-colors">3D Customizer</a></li>
+            <li><a href="index.html#color-vault" class="hover:text-primary transition-colors">Color Vault</a></li>
+            <li><a href="cart.html" class="hover:text-primary transition-colors">Bag &amp; Checkout</a></li>
+            <li><a href="index.html#charm-dock" class="hover:text-primary transition-colors">Snap Perforations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label text-xs uppercase tracking-wider text-primary font-bold mb-3">Care &amp; Fit</h4>
+          <ul class="space-y-2 text-xs text-on-surface-variant">
+            <li><a href="javascript:void(0)" onclick="toggleModal('size-modal')" class="hover:text-primary transition-colors">Official Size Guide</a></li>
+            <li><a href="product.html" class="hover:text-primary transition-colors">Foam Reshaping</a></li>
+            <li><a href="cart.html" class="hover:text-primary transition-colors">Track Order</a></li>
+            <li><a href="javascript:void(0)" onclick="CrocCart.showToast('Easy 30-Day returns with prepaid label')" class="hover:text-primary transition-colors">Easy 30-Day Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-label text-xs uppercase tracking-wider text-primary font-bold mb-3">Trust &amp; Security</h4>
+          <ul class="space-y-2 text-xs text-on-surface-variant">
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-tertiary">verified</span> Authentic Croslite™</li>
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-secondary">local_shipping</span> Free US Shipping $50+</li>
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-primary">lock</span> 256-Bit SSL Encrypted</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-xs text-on-surface-variant pt-6 border-t border-black/[0.05]">
+        <div class="flex items-center gap-2">
+          <img alt="CrocKicks Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqn3Ob3fr2uQ9RS6aLJS9gsduOASozbw932-3HQKYSWvzkMpy7zPnsd3Q-qdzkScXYhUfGqJTClDi195IjrbAIaq2qjmm4MM0CTBAGP7g_tIi_Yy2WCgdO4R43KbG0Rr6ltDu3guGqwE1W1pZgYWiUBYMlA9BmHNa_TPVlRs6VCr7koCGYMFUHtGVkaTmrh_e_nnttkIiKR_V4xeSWSHZcaXbOAcivrOqAuUfg2lCgM2Qqc0AThKWfDgBPPT7BEJbstI"/>
+          <span>© 2025 CrocKicks Lab. Crafted for next-gen comfort.</span>
+        </div>
+        <div class="flex gap-4">
+          <a class="hover:text-primary transition-colors" href="product.html">Atelier</a>
+          <a class="hover:text-primary transition-colors" href="cart.html">View Bag</a>
+          <a class="hover:text-primary transition-colors" href="index.html#color-vault">Color Vault</a>
+          <a class="hover:text-primary transition-colors" href="#jibbitz-studio">Jibbitz™</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/cart.js"></script>
+  <script src="js/motion.js"></script>
+  <script>
+    // 360° DRAG TO ORBIT SIMULATION
+    const heroStage = document.getElementById('hero-interactive-stage');
+    const mainImg = document.getElementById('main-product-img');
+    const orbitReadout = document.getElementById('orbit-angle-readout');
+
+    let currentProduct = null;
+    let studioAngles = [
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAX78HCGL0cRnINHirkJgmW4dLfaXj6xY8Ujl0vTCUFXIxk3A9I2a3WTF3MGTHxn81QnX6eIIKc3gG9X9oFrFcSyO6tYV0mPl_BwPzaq_GejoT4zvdUDa18v3OlZtpFsoaREmmPihW23F1U_k01UxbbMXifFgdC8z_szdB-bar7kCklsDXM1So4xKfL14AX7KBlVSrdwZXOEefUh5486WDmKOKW-pLJoBx-3BK3wtiC",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuATrZ7ywX96RA6UAfHvzS7rNbV-vrApkyYeNbcBwN2rERGTpIVw1zqfPP8sGHl2t_bdBiwfuKEwNOLGxHVoTW5v2aWh1zOZDIofLGevVFrHt_A_U5uEVexNXhyIwruDe7FqNt1z_SlC7U5SJ4rYhlIW326P_tHCnnCZH3DnPuydgGU04eQQMd_uL_GCUEmH7-3frp40_w-d0zxNU9dvW-i7pp4Sr96eCTFZ53267YOQ",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC3ZKN1PJGV-HOdV0n0BK9fBUcq22AQdkFlY9eqSgVeDKRXbxej5184s1griEO8Oju1Z39X--IIXMmrX9eLY65zS927bqDqHQlXCzXjqHjT9-nJqdhDTD4RM7kpznQxQMfm89KlstrChp34gtmOUky1amkmMddtGySGMQ8Osj7hM-hUrVUfpu9RQqDgkm1dpCL2VHCUVKWFoxqW2FXlpXOIsPkiB1GNN1kCLtT3fVcP",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDv7j9VOiK_Ct8res7HAU23aiUpQS8f3dpuRtDswlzd5UGB80B4VgGSsyvtbsi_iZ6-tXP3MmuQY1_q_frF8ov3cMAoqimLOABWaMxSVSgWV5yJ_9Z0fmMmVItCiWXq9NMSktTq0wGL-RRn6wq_ClUH7CeSzHCjWsaGta2B6h4a4wqOZZGDUHOy6sUCvdaUUrPBDRYTtWO6yTNpSscIdnAazz-ikR8e6c9MKb7H9DkY"
+    ];
+
+    let isDragging = false;
+    let startX = 0;
+    let currentOrbitDegree = 0;
+
+    heroStage.addEventListener('mousedown', (e) => {
+      if (currentViewMode === '3d') return;
+      isDragging = true;
+      startX = e.clientX;
+    });
+
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const delta = e.clientX - startX;
+      currentOrbitDegree = (currentOrbitDegree + delta * 0.4) % 360;
+      if (currentOrbitDegree < 0) currentOrbitDegree += 360;
+      startX = e.clientX;
+
+      if (orbitReadout) {
+        orbitReadout.innerText = `Orbit Angle (${Math.round(currentOrbitDegree)}°)`;
+      }
+
+      const index = Math.floor((currentOrbitDegree / 360) * studioAngles.length) % studioAngles.length;
+      if (mainImg.getAttribute('data-active-index') !== String(index)) {
+        mainImg.setAttribute('data-active-index', String(index));
+        mainImg.src = studioAngles[index];
+      }
+    });
+
+    function applyOrbitPreset(idx) {
+      CrocCart.playAcousticPop(520);
+      switchMainImage(idx);
+      currentOrbitDegree = idx * 90;
+      if (orbitReadout) orbitReadout.innerText = `Orbit Angle (${currentOrbitDegree}°)`;
+
+      if (currentViewMode === '3d') {
+        const viewer = document.getElementById('croc-3d-viewer');
+        if (viewer) {
+          const angles = ['45deg 75deg 105%', '90deg 75deg 105%', '0deg 25deg 105%', '180deg 75deg 105%'];
+          viewer.cameraOrbit = angles[idx] || '0deg 75deg 105%';
+        }
+      }
+    }
+
+    function switchMainImage(index) {
+      CrocCart.playAcousticPop();
+      if (currentViewMode === '3d') {
+        setViewMode('photo');
+      }
+      if (mainImg) {
+        mainImg.style.transform = 'scale(0.95)';
+        mainImg.setAttribute('data-active-index', String(index));
+        setTimeout(() => {
+          mainImg.src = studioAngles[index];
+          mainImg.style.transform = 'scale(1)';
+        }, 120);
+      }
+      const thumbs = document.querySelectorAll('#thumb-rail .photo-thumb');
+      thumbs.forEach((thumb, idx) => {
+        if (idx === index) {
+          thumb.classList.remove('opacity-70', 'opacity-50', 'border-black/10');
+          thumb.classList.add('opacity-100', 'border-2', 'border-primary', 'shadow-md');
+        } else {
+          thumb.classList.add('opacity-70', 'border-black/10');
+          thumb.classList.remove('opacity-100', 'border-2', 'border-primary', 'shadow-md');
+        }
+      });
+      const thumb3d = document.getElementById('thumb-3d-tile');
+      if (thumb3d) {
+        thumb3d.classList.remove('ring-2', 'ring-secondary-container', 'scale-105');
+      }
+    }
+
+    // COLORWAY SELECTION
+    let activeColorName = 'Rich Goldenrod Yellow';
+    let activeColorHex = '#EAB308';
+
+    function selectColor(btn, colorName, hexBg, auraRgba, imgIndex) {
+      CrocCart.playAcousticPop(540);
+      activeColorName = colorName;
+      activeColorHex = hexBg;
+
+      document.querySelectorAll('.color-dot').forEach(el => {
+        el.classList.remove('scale-110', 'border-primary');
+        el.classList.add('border-transparent');
+        el.innerHTML = '';
+      });
+      btn.classList.add('scale-110', 'border-primary');
+      btn.classList.remove('border-transparent');
+      btn.innerHTML = '<span class="material-symbols-outlined text-primary text-sm font-bold">check</span>';
+
+      document.getElementById('active-color-label').innerText = colorName;
+
+      const auraPrimary = document.getElementById('hero-aura-glow');
+      if (auraPrimary) auraPrimary.style.backgroundColor = auraRgba;
+
+      // Realtime 3D Foam Material Color Tinting
+      applyColorTo3DModel(hexBg);
+
+      CrocCart.showToast(`Selected shade: ${colorName}`);
+    }
+
+    // UNISEX SIZING PICKER
+    let activeSize = 'W8 / M6';
+    function selectSize(btn) {
+      CrocCart.playAcousticPop(490);
+      activeSize = btn.innerText.replace('★', '').trim();
+      document.querySelectorAll('.size-btn').forEach(el => {
+        el.classList.remove('bg-primary', 'text-white', 'shadow-md', 'border-primary');
+        el.classList.add('bg-surface-container-low', 'text-on-surface', 'border-black/5');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface', 'border-black/5');
+      btn.classList.add('bg-primary', 'text-white', 'shadow-md', 'border-primary');
+    }
+
+    // JIBBITZ SNAP DOCKING & RADIAL PARTICLE BURST
+    let activeCharms = [];
+    let basePrice = 59.99;
+    const charmExtraUnitPrice = 4.00;
+    const freeCharmsIncluded = 3;
+    let orderQuantity = 1;
+
+    function triggerParticleBurst(clientX, clientY, color = '#FE5D39') {
+      const count = 12;
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'snap-particle';
+        particle.style.left = `${clientX}px`;
+        particle.style.top = `${clientY}px`;
+        particle.style.backgroundColor = color;
+        particle.style.width = `${Math.random() * 6 + 4}px`;
+        particle.style.height = particle.style.width;
+
+        const angle = (Math.PI * 2 / count) * i;
+        const dist = Math.random() * 45 + 30;
+        const tx = Math.cos(angle) * dist;
+        const ty = Math.sin(angle) * dist;
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 600);
+      }
+    }
+
+    function toggleCharm(id, icon, color, label, event) {
+      CrocCart.playAcousticPop(620);
+      if (event) {
+        triggerParticleBurst(event.clientX, event.clientY, color);
+      }
+
+      const existingIdx = activeCharms.findIndex(c => c.id === id);
+      const btn = document.getElementById('charm-btn-' + id);
+
+      if (existingIdx > -1) {
+        activeCharms.splice(existingIdx, 1);
+        if (btn) btn.classList.remove('border-2', 'border-primary', 'bg-white', 'shadow-md');
+        CrocCart.showToast(`Removed ${label} Charm`);
+      } else {
+        if (activeCharms.length >= 6) {
+          CrocCart.showToast('Maximum 6 charm ports filled!');
+          return;
+        }
+        activeCharms.push({ id, icon, color, label });
+        if (btn) btn.classList.add('border-2', 'border-primary', 'bg-white', 'shadow-md');
+        CrocCart.showToast(`Snapped ${label} Charm into platform!`);
+      }
+
+      renderPorts();
+      updatePriceTally();
+    }
+
+    function handlePortClick(portIndex, event) {
+      CrocCart.playAcousticPop(580);
+      if (event) {
+        triggerParticleBurst(event.clientX, event.clientY, '#FFE087');
+      }
+
+      if (activeCharms[portIndex - 1]) {
+        const removed = activeCharms.splice(portIndex - 1, 1)[0];
+        const btn = document.getElementById('charm-btn-' + removed.id);
+        if (btn) btn.classList.remove('border-2', 'border-primary', 'bg-white', 'shadow-md');
+        CrocCart.showToast(`Removed charm from Port #${portIndex}`);
+      } else {
+        const defaults = [
+          { id: 'smiley', icon: 'mood', color: '#FFE087', label: 'Smiley' },
+          { id: 'bolt', icon: 'bolt', color: '#FE5D39', label: 'Bolt' },
+          { id: 'star', icon: 'grade', color: '#CFA600', label: 'Star' },
+          { id: 'flower', icon: 'local_florist', color: '#FFD027', label: 'Daisy' }
+        ];
+        const candidate = defaults.find(d => !activeCharms.some(c => c.id === d.id)) || defaults[0];
+        activeCharms.push(candidate);
+        const btn = document.getElementById('charm-btn-' + candidate.id);
+        if (btn) btn.classList.add('border-2', 'border-primary', 'bg-white', 'shadow-md');
+        CrocCart.showToast(`Port #${portIndex} loaded with ${candidate.label}!`);
+      }
+
+      renderPorts();
+      updatePriceTally();
+    }
+
+    function clearAllCharms() {
+      CrocCart.playAcousticPop(380);
+      activeCharms = [];
+      document.querySelectorAll('.charm-item').forEach(b => {
+        b.classList.remove('border-2', 'border-primary', 'bg-white', 'shadow-md');
+      });
+      renderPorts();
+      updatePriceTally();
+      CrocCart.showToast('All docking ports cleared.');
+    }
+
+    function renderPorts() {
+      for (let i = 1; i <= 6; i++) {
+        const port = document.getElementById('port-' + i);
+        if (!port) continue;
+        const charm = activeCharms[i - 1];
+
+        if (charm) {
+          port.innerHTML = `
+            <span class="material-symbols-outlined text-lg animate-bounce" style="color: ${charm.color}; font-variation-settings: 'FILL' 1;">${charm.icon}</span>
+            <span class="font-label text-[8px] sm:text-[9px] font-bold text-primary truncate max-w-full leading-tight mt-0.5">${charm.label}</span>
+          `;
+          port.classList.remove('border-dashed', 'border-black/15');
+          port.classList.add('border-solid', 'border-secondary', 'bg-white', 'shadow-md', 'scale-105');
+        } else {
+          port.innerHTML = `
+            <span class="material-symbols-outlined text-xs text-outline group-hover:scale-125 transition-transform">add</span>
+            <span class="font-label text-[9px] text-outline mt-0.5">#${i}</span>
+          `;
+          port.classList.add('border-dashed', 'border-black/15');
+          port.classList.remove('border-solid', 'border-secondary', 'bg-white', 'shadow-md', 'scale-105');
+        }
+      }
+      const countEl = document.getElementById('charm-count');
+      if (countEl) countEl.innerText = activeCharms.length;
+    }
+
+    // REAL-TIME PRICING & QUANTITY CALCULATION
+    function adjustQty(delta) {
+      CrocCart.playAcousticPop(460);
+      const next = orderQuantity + delta;
+      if (next >= 1 && next <= 12) {
+        orderQuantity = next;
+        document.getElementById('order-qty').innerText = orderQuantity;
+        updatePriceTally();
+      }
+    }
+
+    function updatePriceTally() {
+      const extraCount = Math.max(0, activeCharms.length - freeCharmsIncluded);
+      const extraCost = extraCount * charmExtraUnitPrice;
+      const shoeTotal = basePrice + extraCost;
+      const grandTotal = (shoeTotal * orderQuantity).toFixed(2);
+
+      const charmPriceReadout = document.getElementById('charm-extra-price');
+      if (extraCost > 0) {
+        charmPriceReadout.innerText = `+$${extraCost.toFixed(2)} (${extraCount} billable)`;
+      } else {
+        charmPriceReadout.innerText = 'Free (3 Promo Applied)';
+      }
+
+      document.getElementById('total-button-price').innerText = `$${grandTotal}`;
+    }
+
+    // ACCORDION EXPANSION
+    function toggleAccordion(id) {
+      CrocCart.playAcousticPop(510);
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      if (isOpen) {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+        icon.innerText = 'expand_more';
+      } else {
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+        content.style.opacity = '1';
+        icon.innerText = 'expand_less';
+      }
+    }
+
+    // CART PERSISTENCE DISPATCH
+    function triggerAddToCart() {
+      const extraCount = Math.max(0, activeCharms.length - freeCharmsIncluded);
+      const extraCost = extraCount * charmExtraUnitPrice;
+      const unitPrice = basePrice + extraCost;
+
+      const charmLabels = activeCharms.length > 0
+        ? `Docked Charms: ${activeCharms.map(c => c.label).join(', ')}`
+        : 'Includes 3 Free Charms Slot';
+
+      const prodId = currentProduct ? currentProduct.id : 'platform';
+      const prodName = currentProduct ? currentProduct.title : 'Classic Platform Clog (+5cm)';
+      const prodSeries = currentProduct ? currentProduct.series : 'Platform Series';
+      const prodBadge = currentProduct ? currentProduct.badge : '+5cm Lift';
+
+      CrocCart.addItem({
+        id: `${prodId}-${activeColorName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+        productId: prodId,
+        name: prodName,
+        series: prodSeries,
+        price: unitPrice,
+        quantity: orderQuantity,
+        color: activeColorName,
+        colorHex: activeColorHex,
+        size: activeSize,
+        badge: prodBadge,
+        image: mainImg ? mainImg.src : studioAngles[0],
+        details: charmLabels
+      });
+
+      const btn = document.getElementById('add-to-cart-btn');
+      if (btn) {
+        btn.classList.add('scale-95');
+        setTimeout(() => btn.classList.remove('scale-95'), 200);
+      }
+    }
+
+    function triggerFastCheckout() {
+      triggerAddToCart();
+      setTimeout(() => {
+        window.location.href = 'cart.html?checkout=true';
+      }, 250);
+    }
+
+    function triggerQuickAdd(title, price, image, prodId = 'platform') {
+      CrocCart.addItem({
+        id: 'quick-' + title.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+        productId: prodId,
+        name: title,
+        series: 'Atelier Fresh Silhouettes',
+        price: price,
+        quantity: 1,
+        color: 'Signature Colorway',
+        size: 'US Men 8 / Women 10',
+        badge: 'Popular',
+        image: image || studioAngles[0],
+        details: '100% Water-Ready Bio-Foam'
+      });
+    }
+
+    // DYNAMIC MULTI-PRODUCT CATALOG RENDERER
+    function loadProductData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 'platform';
+
+      if (typeof CrocProducts === 'undefined') {
+        console.warn('CrocProducts catalog not yet loaded');
+        return;
+      }
+
+      currentProduct = CrocProducts.getProductById(productId) || CrocProducts.getProductById('platform');
+      if (!currentProduct) return;
+
+      // 1. Meta, Head & Titles
+      document.title = `CrocKicks — ${currentProduct.title} Customizer Lab`;
+
+      const breadcrumbEl = document.getElementById('breadcrumb-title');
+      if (breadcrumbEl) breadcrumbEl.innerText = currentProduct.title;
+
+      const breadcrumbCategory = document.getElementById('breadcrumb-category');
+      if (breadcrumbCategory) breadcrumbCategory.innerText = currentProduct.breadcrumb || currentProduct.series;
+
+      const seriesBadgeEl = document.getElementById('product-series-badge');
+      if (seriesBadgeEl) {
+        seriesBadgeEl.innerHTML = `
+          <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          ${currentProduct.tagline || currentProduct.series}
+        `;
+      }
+
+      const demandBadge = document.getElementById('product-demand-badge');
+      if (demandBadge) {
+        demandBadge.innerHTML = `
+          <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+          ${currentProduct.series} • High Demand Release
+        `;
+      }
+
+      const heroBadge = document.getElementById('hero-badge-1');
+      if (heroBadge) {
+        heroBadge.innerHTML = `
+          <span class="material-symbols-outlined text-sm">auto_awesome</span>
+          ${currentProduct.badge || 'Sculpted Foam'}
+        `;
+      }
+
+      const titleEl = document.getElementById('product-title-text');
+      if (titleEl) titleEl.innerText = currentProduct.title;
+
+      const ratingEl = document.getElementById('product-rating-text');
+      if (ratingEl) ratingEl.innerText = currentProduct.rating || '4.92 (1,420 reviews)';
+
+      const unitPriceEl = document.getElementById('unit-price-display');
+      if (unitPriceEl) unitPriceEl.innerText = `$${currentProduct.price.toFixed(2)}`;
+
+      const comparePriceEl = document.getElementById('compare-price-display');
+      if (comparePriceEl) comparePriceEl.innerText = `$${(currentProduct.price * 1.25).toFixed(2)}`;
+
+      const descEl = document.getElementById('product-description-text');
+      if (descEl) descEl.innerText = currentProduct.description;
+
+      // 2. Base Price Update
+      basePrice = currentProduct.price;
+
+      // 3. Studio Angles & Main Stage
+      if (currentProduct.angles && currentProduct.angles.length > 0) {
+        studioAngles = currentProduct.angles;
+        if (mainImg) {
+          mainImg.src = studioAngles[0];
+          mainImg.alt = currentProduct.title;
+          mainImg.setAttribute('data-active-index', '0');
+        }
+      }
+
+      // 4. View Angle Thumbnails Rail + 5th Dedicated 3D Model Tile
+      const thumbRail = document.getElementById('thumb-rail');
+      if (thumbRail && studioAngles.length > 0) {
+        thumbRail.innerHTML = studioAngles.map((url, idx) => `
+          <button class="thumb-btn photo-thumb tilt-card rounded-2xl overflow-hidden bg-surface-container-lowest ${idx === 0 ? 'border-2 border-primary shadow-md' : 'border border-black/10 opacity-70 hover:opacity-100'} aspect-square shadow-sm transition-all outline-none p-1.5 cursor-pointer" onclick="switchMainImage(${idx})" type="button">
+            <div class="specular-sheen"></div>
+            <img alt="Thumbnail Angle ${idx + 1}" class="w-full h-full object-contain rounded-xl" src="${url}"/>
+          </button>
+        `).join('') + `
+          <!-- 5th Dedicated 3D Model Tile -->
+          <button id="thumb-3d-tile" class="thumb-btn tilt-card rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900 to-black border-2 border-secondary-container text-white flex flex-col items-center justify-center p-1.5 shadow-md hover:scale-105 hover:border-amber-400 transition-all outline-none group aspect-square relative cursor-pointer" onclick="setViewMode('3d')" type="button" title="Open Interactive 3D Model">
+            <div class="specular-sheen"></div>
+            <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-80"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span>
+            </span>
+            <span class="material-symbols-outlined text-2xl text-secondary-container group-hover:scale-125 transition-transform duration-300">view_in_ar</span>
+            <span class="font-label text-[10px] font-black text-white tracking-wider mt-1 uppercase">3D Lab</span>
+            <span class="font-label text-[8px] text-tertiary-fixed font-bold tracking-tight">360° Orbit</span>
+          </button>
+        `;
+      }
+
+      // 5. Colorways Swatches Matrix
+      const swatchList = document.getElementById('color-swatch-list');
+      const activeColorLabel = document.getElementById('active-color-label');
+      if (swatchList && currentProduct.colorways && currentProduct.colorways.length > 0) {
+        const first = currentProduct.colorways[0];
+        activeColorName = first.name;
+        activeColorHex = first.hex;
+        if (activeColorLabel) activeColorLabel.innerText = first.name;
+
+        const heroAura = document.getElementById('hero-aura-glow');
+        if (heroAura) heroAura.style.backgroundColor = first.aura || 'rgba(254, 226, 89, 0.45)';
+
+        // Pre-tint 3D model to matching product colorway on load
+        applyColorTo3DModel(first.hex);
+
+        swatchList.innerHTML = currentProduct.colorways.map((cw, idx) => `
+          <button class="color-dot relative w-10 h-10 rounded-full shadow-sm transition-all ${idx === 0 ? 'scale-110 border-2 border-primary' : 'hover:scale-110 border-2 border-transparent'} flex items-center justify-center" 
+            style="background-color: ${cw.hex};" 
+            onclick="selectColor(this, '${cw.name.replace(/'/g, "\\'")}', '${cw.hex}', '${cw.aura || 'rgba(0,0,0,0.1)'}', ${idx})" 
+            title="${cw.name}" 
+            type="button">
+            ${idx === 0 ? '<span class="material-symbols-outlined text-primary text-sm font-bold">check</span>' : ''}
+          </button>
+        `).join('');
+      }
+
+      // 6. Tactile Engineering Specs Bento Grid
+      const specsGrid = document.getElementById('product-specs-grid');
+      if (specsGrid && currentProduct.specs) {
+        const icons = ['air', 'height', 'water_drop', 'speed', 'shield'];
+        const bgColors = ['bg-surface-container', 'bg-secondary-fixed', 'bg-tertiary-fixed'];
+        const textColors = ['text-primary', 'text-secondary', 'text-tertiary'];
+        specsGrid.innerHTML = currentProduct.specs.slice(0, 3).map((spec, idx) => `
+          <div class="tilt-card p-4 rounded-2xl bg-surface-container-lowest border border-black/[0.04] shadow-sm flex flex-col gap-2">
+            <div class="specular-sheen"></div>
+            <div class="w-10 h-10 rounded-xl ${bgColors[idx % bgColors.length]} flex items-center justify-center ${textColors[idx % textColors.length]} shadow-inner">
+              <span class="material-symbols-outlined text-xl">${icons[idx % icons.length]}</span>
+            </div>
+            <span class="font-headline font-bold text-sm text-primary">${spec.label}</span>
+            <p class="font-body text-xs text-on-surface-variant">${spec.value}</p>
+          </div>
+        `).join('');
+      }
+
+      // 7. Accordion Ergonomics & Features
+      const accFit = document.getElementById('acc-fit');
+      if (accFit && currentProduct.features) {
+        accFit.innerHTML = `
+          <p class="pt-2 font-medium">${currentProduct.description}</p>
+          <ul class="list-disc pl-5 space-y-1.5 pt-1">
+            ${currentProduct.features.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+        `;
+      }
+
+      // 8. Related Silhouettes Cards
+      const relatedGrid = document.getElementById('related-silhouettes-grid');
+      if (relatedGrid && CrocProducts.getRelatedProducts) {
+        const related = CrocProducts.getRelatedProducts(currentProduct.id, 4);
+        relatedGrid.innerHTML = related.map(rel => `
+          <div class="tilt-card rounded-2xl bg-surface-container-lowest p-4 shadow-sm hover:shadow-xl transition-all border border-black/[0.04] flex flex-col justify-between group">
+            <div class="specular-sheen"></div>
+            <a href="product.html?id=${rel.id}" class="block group-hover:opacity-95">
+              <div class="relative w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-3 flex items-center justify-center p-3">
+                <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label text-[10px] uppercase font-bold shadow-xs">
+                  ${rel.badge || 'Drop'}
+                </span>
+                <img alt="${rel.title}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="${rel.angles[0]}"/>
+              </div>
+              <span class="font-label text-xs text-secondary uppercase font-bold">${rel.series}</span>
+              <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1 truncate">${rel.title}</h3>
+            </a>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
+              <span class="font-headline font-extrabold text-base text-primary">$${rel.price.toFixed(2)}</span>
+              <div class="flex items-center gap-1.5">
+                <a href="product.html?id=${rel.id}" class="h-8 px-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label text-[11px] font-bold flex items-center gap-1 transition-colors">
+                  <span>View</span>
+                  <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                </a>
+                <button class="w-8 h-8 rounded-full bg-primary hover:bg-secondary text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('${rel.title.replace(/'/g, "\\'")}', ${rel.price}, '${rel.angles[0]}', '${rel.id}')" type="button" title="Quick Add">
+                  <span class="material-symbols-outlined text-sm">add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 9. Recompute Price Tally
+      updatePriceTally();
+
+      // 10. Rebind Tilt Physics
+      if (window.attachTiltEffects) window.attachTiltEffects();
+    }
+
+    // ==========================================
+    // 3D MODEL VIEWER & LIVE COLOR TINTING ENGINE
+    // ==========================================
+    let currentViewMode = 'photo'; // 'photo' or '3d'
+
+    function setViewMode(mode) {
+      CrocCart.playAcousticPop(520);
+      currentViewMode = mode;
+
+      const photoContainer = document.getElementById('product-canvas-container');
+      const modelContainer = document.getElementById('product-3d-container');
+      const photoBtn = document.getElementById('view-mode-photo-btn');
+      const modelBtn = document.getElementById('view-mode-3d-btn');
+      const stageCallout = document.getElementById('stage-3d-callout-container');
+      const orbitControls = document.getElementById('orbit-controls-container');
+      const thumb3d = document.getElementById('thumb-3d-tile');
+      const orbitHud = document.getElementById('orbit-angle-readout');
+
+      if (mode === '3d') {
+        if (photoContainer) photoContainer.classList.add('hidden');
+        if (modelContainer) {
+          modelContainer.classList.remove('hidden');
+          modelContainer.classList.add('flex');
+        }
+
+        if (photoBtn) {
+          photoBtn.className = "px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5 text-xs font-bold cursor-pointer";
+        }
+        if (modelBtn) {
+          modelBtn.className = "relative px-4 py-1.5 rounded-full bg-primary text-white ring-2 ring-secondary-container shadow-md transition-all flex items-center gap-2 text-xs font-black cursor-pointer";
+          modelBtn.classList.remove('glow-3d-pulse');
+        }
+
+        if (stageCallout) stageCallout.classList.add('hidden');
+        if (orbitControls) orbitControls.classList.remove('hidden');
+
+        if (thumb3d) {
+          thumb3d.classList.add('ring-2', 'ring-secondary-container', 'scale-105', 'border-amber-400');
+        }
+
+        document.querySelectorAll('#thumb-rail .photo-thumb').forEach(t => {
+          t.classList.add('opacity-50');
+          t.classList.remove('border-primary', 'border-2', 'shadow-md');
+          t.classList.add('border', 'border-black/10');
+        });
+
+        if (orbitHud) orbitHud.innerText = 'Interactive 3D Active (Drag anywhere to Orbit)';
+
+        // Ensure active product color is applied to 3D model
+        applyColorTo3DModel(activeColorHex);
+
+        CrocCart.showToast('🧊 3D Customizer Active! Drag anywhere to spin 360°, scroll to zoom.');
+      } else {
+        if (modelContainer) {
+          modelContainer.classList.add('hidden');
+          modelContainer.classList.remove('flex');
+        }
+        if (photoContainer) photoContainer.classList.remove('hidden');
+
+        if (photoBtn) {
+          photoBtn.className = "px-3.5 py-1.5 rounded-full bg-primary text-white transition-all flex items-center gap-1.5 shadow-sm text-xs font-bold cursor-pointer";
+        }
+        if (modelBtn) {
+          modelBtn.className = "glow-3d-pulse relative px-4 py-1.5 rounded-full bg-gradient-to-r from-secondary via-secondary-container to-amber-500 text-white font-black transition-all flex items-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer border border-white/50 text-xs";
+        }
+
+        if (stageCallout) stageCallout.classList.remove('hidden');
+        if (orbitControls) orbitControls.classList.add('hidden');
+
+        if (thumb3d) {
+          thumb3d.classList.remove('ring-2', 'ring-secondary-container', 'scale-105', 'border-amber-400');
+        }
+
+        const activeIdx = mainImg ? Number(mainImg.getAttribute('data-active-index') || 0) : 0;
+        document.querySelectorAll('#thumb-rail .photo-thumb').forEach((t, i) => {
+          if (i === activeIdx) {
+            t.classList.remove('opacity-50', 'border-black/10');
+            t.classList.add('opacity-100', 'border-2', 'border-primary', 'shadow-md');
+          } else {
+            t.classList.add('opacity-70', 'border-black/10');
+            t.classList.remove('opacity-100', 'border-2', 'border-primary', 'shadow-md', 'opacity-50');
+          }
+        });
+
+        if (orbitHud) orbitHud.innerText = 'Drag to Orbit (0°)';
+      }
+    }
+
+    function hexToRgbaArray(hex) {
+      let c = (hex || '#EAB308').replace('#', '').trim();
+      if (c.length === 3) c = c.split('').map(x => x + x).join('');
+      const num = parseInt(c, 16);
+      let r = ((num >> 16) & 255) / 255;
+      let g = ((num >> 8) & 255) / 255;
+      let b = (num & 255) / 255;
+
+      // CRITICAL PBR COLOR BOOST:
+      // Google <model-viewer> uses Linear-sRGB lighting calculations.
+      // Standard raw sRGB ratios render washed-out and faint under white studio HDR lighting.
+      // Applying gamma conversion (approx 1.85) deepens the base color factor,
+      // creating rich, tactile, deeply-pigmented footwear foam colors without appearing faint.
+      r = Math.pow(r, 1.85);
+      g = Math.pow(g, 1.85);
+      b = Math.pow(b, 1.85);
+
+      return [r, g, b, 1.0];
+    }
+
+    function applyColorTo3DModel(hexColor) {
+      const viewer = document.getElementById('croc-3d-viewer');
+      if (!viewer) return;
+
+      const rgba = hexToRgbaArray(hexColor);
+
+      const doTint = () => {
+        try {
+          if (viewer.model && viewer.model.materials) {
+            viewer.model.materials.forEach(mat => {
+              if (mat.pbrMetallicRoughness) {
+                mat.pbrMetallicRoughness.setBaseColorFactor(rgba);
+                mat.pbrMetallicRoughness.setRoughnessFactor(0.72);
+                mat.pbrMetallicRoughness.setMetallicFactor(0.01);
+              }
+            });
+          }
+        } catch (err) {
+          console.warn('3D Tint error:', err);
+        }
+      };
+
+      if (viewer.loaded) {
+        doTint();
+      } else {
+        viewer.addEventListener('load', doTint, { once: true });
+      }
+    }
+
+    function reset3DCamera() {
+      CrocCart.playAcousticPop(480);
+      const viewer = document.getElementById('croc-3d-viewer');
+      if (viewer) {
+        viewer.cameraOrbit = '0deg 75deg 105%';
+        viewer.cameraTarget = 'auto auto auto';
+        viewer.fieldOfView = 'auto';
+        CrocCart.showToast('Camera reset to default 3D angle');
+      }
+    }
+
+    // Initialize immediately & on DOM load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadProductData);
+    } else {
+      loadProductData();
+    }
+  </script>
+</body>
+</html>

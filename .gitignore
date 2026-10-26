@@ -1,0 +1,15 @@
+# Dependencies & Package Managers
+node_modules/
+.npm/
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Environment & Local Secrets
+.env
+.env.*
+.credentials/
+*.secret

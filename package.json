@@ -1,0 +1,21 @@
+{
+  "name": "crockicks",
+  "version": "1.0.0",
+  "description": "CrocKicks — Next-Gen Haute Foam E-Commerce Footwear Studio & 3D Configurator",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -l 3000",
+    "dev": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "crocs",
+    "footwear",
+    "ecommerce",
+    "crockicks",
+    "foam-couture",
+    "jibbitz",
+    "3d-configurator"
+  ],
+  "author": "CrocKicks Studio",
+  "license": "MIT"
+}
