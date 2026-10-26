@@ -19,11 +19,17 @@ const CrocCart = (function () {
     }
   } catch (e) {}
 
+  // Indian Currency Formatter (e.g. ₹2,995, ₹3,995)
+  function formatPrice(amount) {
+    return '₹' + Math.round(Number(amount) || 0).toLocaleString('en-IN');
+  }
+
   // Available Promotional Discounts
   const PROMO_RULES = {
     KICK15: { type: 'percent', value: 0.15, label: '15% OFF entire order' },
-    JIBBITZ: { type: 'fixed', value: 10.0, label: '$10 OFF accessories' },
-    FREESHIP: { type: 'shipping', value: 0, label: 'Free Express VIP Shipping' }
+    DESI20: { type: 'percent', value: 0.20, label: '20% OFF Festive Season Drop' },
+    FIRST300: { type: 'fixed', value: 300.0, label: '₹300 OFF first order' },
+    FREESHIP: { type: 'shipping', value: 0, label: 'Free All-India VIP Express Delivery' }
   };
 
   // Curated demo pack if the user wants to load sample items with 1 click
@@ -32,43 +38,43 @@ const CrocCart = (function () {
       id: 'item-platform',
       name: 'CrocKicks Platform Clog (+5cm)',
       series: 'Platform Atelier',
-      price: 59.99,
+      price: 3995,
       quantity: 1,
       color: 'Sunburst Yellow',
       colorHex: '#FFE259',
-      size: 'US Men 8 / Women 10',
+      size: 'UK 8 (India / Men)',
       badge: '+5cm Lift',
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuAgJaQ6j6ZDeq3R7dPQOQvLhQjI3J1FJ9XiIUczpgfVYzhEzX97yYAEFTWnRloaBwgEIRbZie9QV6Y_5eXlmmKtVYTC6RLpQJpaGqZONtaoG2dTON38Fe3vy1ov3xwnVY0q7rnSYDZufgJTHxtyvcEi4P5WHkgLlP29t6_Up94_-GpbgVRO6C-3Y_TC6rWLnE1jIjfgw9hbqCU_c3W0rOJaiTbxkg9Tzt0-24urNGgA',
-      details: 'Included: Smiley & Moon Jibbitz Charms Pre-Docked'
+      details: 'Included: 🏏 Cricket & 🪔 Diya Jibbitz Charms Pre-Docked'
     },
     {
       id: 'item-fleece',
       name: 'CrocKicks Fleece Lined Clog',
       series: 'Seasonal Warmth',
-      price: 64.99,
+      price: 4495,
       quantity: 1,
       color: 'Bubblegum Pink',
       colorHex: '#FFA8C5',
-      size: 'US Women 7',
+      size: 'UK 6 (India / Women)',
       badge: 'Cozy Drop',
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuDHx1QE92UwptflBNyCvyTPvJ36RBZFzM0ml9fCFHltSjy_UwtzMxZqWp-zzDpAZWaLm4Eq9nEzHmghgV_1pVyIm1A5WY-1vAp6uHcVhpba4HRqz9Fyhepxl5c3jVHTw4wy_MTvs5f36_aeW6peTpvFqMKA2y2VunCi8KQ_--RPsMp_a3frP7CFwdRo-2svTYCiwsnghUVvqhEJyd7oLdtZymc21j7lgFVMpPKNErkd',
-      details: 'Cloud-Shearling Lining • Indoor/Outdoor Sole'
+      details: 'Cloud-Shearling Lining • Non-Skid Indoor/Outdoor Sole'
     },
     {
       id: 'item-charms',
-      name: '5-Pack Mystery Jibbitz Pop Charms',
+      name: 'Desi Pop 5-Pack Jibbitz Charms',
       series: 'Charms & Custom',
-      price: 14.99,
+      price: 899,
       quantity: 1,
-      color: 'Neo-Pop Vault Edition',
+      color: 'Desi Pop Limited Edition',
       colorHex: '#FE5D39',
       size: 'Universal Fit',
-      badge: 'Limited',
+      badge: 'Festive',
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuBNA5FpGEF3Gh9KIJtkkIrF8lMYmSe3h04O6qk7Pg4WQlKYLA5M0ON1uXPnJFsDdIakiAPMSgq4dkgyuiyfzqVU1DWDZFqUtMOuXd-o2r4Ki04tdUl8Vo1UKTISFfDIiPtaB33B8Uc3LMOuBDd-E0yFv9EDGYPCNUqAVzR2uY5KYzbby0rlVLrDA8x6jcb9o2narvzPPFmDF9OUKfEFAgsSXXHszOZll23ZAtv3lJNe',
-      details: 'Guaranteed 1 Holographic Foil Charm Inside'
+      details: 'Guaranteed Cricket, Auto, Chai, Diya & Evil Eye Charms'
     }
   ];
 
@@ -188,11 +194,11 @@ const CrocCart = (function () {
         productId: item.productId || 'platform',
         name: item.name || 'CrocKicks Custom',
         series: item.series || 'Atelier Collection',
-        price: parseFloat(item.price) || 49.99,
+        price: parseFloat(item.price) || 2995,
         quantity: item.quantity || 1,
         color: item.color || 'Sunburst Yellow',
         colorHex: item.colorHex || '#FFE259',
-        size: item.size || 'US Men 8 / Women 10',
+        size: item.size || 'UK 8 (India / Men)',
         badge: item.badge || 'New Drop',
         image:
           item.image ||
@@ -233,7 +239,7 @@ const CrocCart = (function () {
     showToast('Your bag has been emptied.');
   }
 
-  // 4. Financial Calculations
+  // 4. Financial Calculations (Indian Rupee INR with Free Shipping over ₹999)
   function calculateTotals() {
     const items = getItems();
     const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
@@ -257,17 +263,18 @@ const CrocCart = (function () {
       promoDesc = `Coupon ${promoCode} applied (${promo.label})`;
     }
 
-    const freeShippingThreshold = 50.0;
+    const freeShippingThreshold = 999.0;
     const shipping =
       subtotal === 0 ||
       subtotal >= freeShippingThreshold ||
       (promo && promo.type === 'shipping')
         ? 0
-        : 6.99;
+        : 99.0;
 
-    const taxableAmount = Math.max(0, subtotal - discount);
-    const tax = taxableAmount > 0 ? taxableAmount * 0.08 : 0;
-    const total = Math.max(0, taxableAmount + shipping + tax);
+    const payableAmount = Math.max(0, subtotal - discount);
+    // In India, prices are MRP (inclusive of GST). We calculate included 18% GST breakdown.
+    const gstIncluded = Math.round(payableAmount - (payableAmount / 1.18));
+    const total = Math.max(0, payableAmount + shipping);
 
     return {
       itemCount,
@@ -277,7 +284,8 @@ const CrocCart = (function () {
       promoDesc,
       shipping,
       freeShippingThreshold,
-      tax,
+      gstIncluded,
+      tax: 0,
       total
     };
   }
@@ -310,7 +318,7 @@ const CrocCart = (function () {
 
     priceElements.forEach((el) => {
       if (el) {
-        el.innerText = `$${totals.total.toFixed(2)}`;
+        el.innerText = formatPrice(totals.total);
       }
     });
 
@@ -390,7 +398,7 @@ const CrocCart = (function () {
     const order = {
       id: orderNumber,
       timestamp: now.toISOString(),
-      formattedDate: now.toLocaleDateString('en-US', {
+      formattedDate: now.toLocaleDateString('en-IN', {
         month: 'short',
         day: 'numeric',
         year: 'numeric',
@@ -398,18 +406,20 @@ const CrocCart = (function () {
         minute: '2-digit'
       }),
       customer: {
-        firstName: customerDetails.firstName || 'Alex',
-        lastName: customerDetails.lastName || 'Rivera',
-        email: customerDetails.email || 'alex.rivera@crockicks.studio',
-        address: customerDetails.address || '742 Evergreen Terrace, Loft 4B',
-        city: customerDetails.city || 'Brooklyn',
-        zip: customerDetails.zip || '11201'
+        firstName: customerDetails.firstName || 'Aarav',
+        lastName: customerDetails.lastName || 'Sharma',
+        phone: customerDetails.phone || '+91 98201 98201',
+        email: customerDetails.email || 'aarav.sharma@crockicks.in',
+        address: customerDetails.address || 'Flat 402, Sea Green Heights, Worli Sea Face',
+        city: customerDetails.city || 'Mumbai',
+        state: customerDetails.state || 'Maharashtra',
+        zip: customerDetails.zip || '400018'
       },
-      paymentMethod: customerDetails.paymentMethod || 'Credit Card (•••• 4242)',
+      paymentMethod: customerDetails.paymentMethod || 'UPI (Google Pay / PhonePe / Paytm)',
       items: [...items],
       totals: { ...totals },
-      status: 'Crafting in Brooklyn Atelier',
-      estimatedDelivery: '2-3 Business Days'
+      status: 'Dispatched from Bhiwandi / Gurugram Atelier',
+      estimatedDelivery: '2-3 Days (BlueDart / Delhivery VIP Air)'
     };
 
     const orders = getOrders();
@@ -472,6 +482,7 @@ const CrocCart = (function () {
   }
 
   return {
+    formatPrice,
     getItems,
     saveItems,
     loadDemoItems,

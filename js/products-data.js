@@ -11,19 +11,20 @@ const CrocProducts = (function () {
       title: "Classic Clog Iconic",
       tagline: "The Global Foam Revolution — 13 Customizable Ports",
       series: "Classic Core Series",
-      price: 44.99,
+      price: 2995,
+      comparePrice: 3495,
       badge: "Iconic Core",
       rating: "4.9 (2,840 verified reviews)",
       breadcrumb: "Classic Clogs",
-      description: "The silhouette that launched a global comfort revolution. Handcrafted from proprietary Croslite™ foam with 13 anatomical ventilation ports. Buoyant, feather-light, and water-friendly.",
+      description: "The silhouette that launched a comfort revolution across India. Handcrafted from proprietary closed-cell Croslite™ foam with 13 anatomical ventilation ports. Buoyant, feather-light, monsoon-resistant, and washable in seconds.",
       specs: [
         { label: "Ventilation Ports", value: "13 Air & Jibbitz Ports" },
-        { label: "Midsole Drop", value: "Standard 22mm Ergonomic" },
+        { label: "Monsoon Rating", value: "100% Water-Immersion Safe" },
         { label: "Upper Material", value: "100% Closed-Cell Croslite™" },
-        { label: "Water Rating", value: "Fully Submersible Hydrophobic" }
+        { label: "Tread Grip", value: "All-Terrain Non-Skid Sole" }
       ],
       features: [
-        "Incredibly light and fun to wear — weighs under 7 oz",
+        "Incredibly light and fun to wear — ideal for Indian monsoons & street style",
         "Pivoting heel straps for a secure lockdown fit",
         "Customizable with up to 26 tactile Jibbitz™ charms",
         "Water-friendly and buoyant; easily washes clean with soap and water"
@@ -48,11 +49,12 @@ const CrocProducts = (function () {
       title: "Classic Platform Clog (+5cm)",
       tagline: "Architectural Height & Chunky Haute Foam Silhouette",
       series: "Platform Series",
-      price: 59.99,
+      price: 3995,
+      comparePrice: 4995,
       badge: "+5cm Lift",
       rating: "5.0 (1,490 verified reviews)",
       breadcrumb: "Platform Atelier",
-      description: "An exaggerated high-fashion silhouette engineered with a +5cm sculptural platform lift. Gives you noticeable posture boost while preserving Croslite™ cloud-soft cushioning.",
+      description: "An exaggerated high-fashion silhouette engineered with a +5cm sculptural platform lift. Gives you noticeable posture boost while preserving Croslite™ cloud-soft cushioning. Built for India's high streets.",
       specs: [
         { label: "Platform Height", value: "+5cm (2.0 inches) Sculpted Lift" },
         { label: "Port Grid", value: "26 Perimeter Precision Ports" },
@@ -85,22 +87,23 @@ const CrocProducts = (function () {
       title: "Fleece Sherpa Haven Clog",
       tagline: "Plush Shearling Lined Winter Cold-Weather Edition",
       series: "Seasonal Warmth",
-      price: 64.99,
+      price: 4495,
+      comparePrice: 5495,
       badge: "Cozy Drop",
       rating: "4.9 (980 verified reviews)",
       breadcrumb: "Fleece & Lined",
-      description: "Sink into cloud-like warmth with our plush shearling-lined clog. Built on the classic ergonomic foam base, surrounded by cozy insulating lining for winter streets and frosty mornings.",
+      description: "Sink into cloud-like warmth with our plush shearling-lined clog. Built on the classic ergonomic foam base, surrounded by cozy insulating lining for cool mornings and AC lounge comfort.",
       specs: [
         { label: "Lining Material", value: "Plush Sherpa Faux Shearling" },
-        { label: "Insulation Level", value: "Thermal Grade Sub-Zero Rating" },
+        { label: "Insulation Level", value: "Thermal Grade All-Season Rating" },
         { label: "Sole Build", value: "Non-Slip Indoor/Outdoor Lug Pods" },
-        { label: "Fit Guide", value: "Roomy Fit — Accommodates Thick Socks" }
+        { label: "Fit Guide", value: "Roomy Fit — UK / India Standard" }
       ],
       features: [
         "Warm, fluffy faux-shearling lining keeps toes toasty all winter",
         "Croslite™ foam construction keeps them light and easy to wear",
         "Pivoting heel strap gives a locked-in, secure fit",
-        "Great indoors as a luxury house shoe or outdoors on cold sidewalks"
+        "Great indoors as a luxury house shoe or outdoors on pavement"
       ],
       angles: [
         "https://lh3.googleusercontent.com/aida-public/AB6AXuDHx1QE92UwptflBNyCvyTPvJ36RBZFzM0ml9fCFHltSjy_UwtzMxZqWp-zzDpAZWaLm4Eq9nEzHmghgV_1pVyIm1A5WY-1vAp6uHcVhpba4HRqz9Fyhepxl5c3jVHTw4wy_MTvs5f36_aeW6peTpvFqMKA2y2VunCi8KQ_--RPsMp_a3frP7CFwdRo-2svTYCiwsnghUVvqhEJyd7oLdtZymc21j7lgFVMpPKNErkd",
@@ -121,16 +124,17 @@ const CrocProducts = (function () {
       title: "Cloud Slide Recovery Slip",
       tagline: "Zero-Gravity Dual-Density Foam Recovery Slide",
       series: "Recovery & Lounge",
-      price: 34.99,
+      price: 2295,
+      comparePrice: 2795,
       badge: "Recovery Slide",
       rating: "4.8 (850 verified reviews)",
       breadcrumb: "Slides & Sandals",
-      description: "Engineered specifically for post-sport recovery and poolside relaxation. Features a deep cup heel cradle, dynamic arch contours, and rapid-drain ventilation wave channels.",
+      description: "Engineered specifically for post-sport recovery and poolside relaxation. Features a deep cup heel cradle, dynamic arch contours, and rapid-drain ventilation wave channels for Indian weather.",
       specs: [
         { label: "Footbed Cushioning", value: "Dual-Density LiteRide™ Foam" },
         { label: "Outsole Grip", value: "Wave Hydro-Channel Tread" },
         { label: "Drying Time", value: "Instant-Dry Closed Cell Foam" },
-        { label: "Weight", value: "Ultralight 5.4 oz" }
+        { label: "Weight", value: "Ultralight 150 grams" }
       ],
       features: [
         "Deep cupped footbed supports and massages tired soles",
@@ -157,20 +161,21 @@ const CrocProducts = (function () {
       title: "CrocKicks Citrus Classic",
       tagline: "Vibrant Summer Neon Drop with UV-Guard Pigments",
       series: "Archive S/S 2025",
-      price: 44.99,
+      price: 2995,
+      comparePrice: 3495,
       badge: "Best Seller",
       rating: "5.0 (2,100 reviews)",
       breadcrumb: "Summer Neon",
-      description: "A high-energy neon drop engineered with our proprietary UV-Guard color lock foam so your sunny citrus kicks stay radiant without sun fading.",
+      description: "A high-energy neon drop engineered with our proprietary UV-Guard color lock foam so your sunny citrus kicks stay radiant under tropical sunlight without fading.",
       specs: [
-        { label: "Color Pigment", value: "UV-Guard Fade Proof Formula" },
+        { label: "Color Pigment", value: "UV-Guard Tropical Sun Proof" },
         { label: "Ventilation", value: "13 Air Ports + 6 Charm Slots" },
         { label: "Comfort Class", value: "Dual Crocs Comfort™" },
         { label: "Tread", value: "Non-Marking Outsole" }
       ],
       features: [
         "Eye-popping neon citrus coloration makes a statement everywhere",
-        "Waterproof, easy to sanitize, and fast drying",
+        "Waterproof, easy to sanitize, and fast drying in monsoon rains",
         "Pivoting heel strap for customizable fit"
       ],
       angles: [
@@ -192,19 +197,20 @@ const CrocProducts = (function () {
       title: "Cloud Stomp Mega Platform",
       tagline: "Exaggerated 6.5cm Lug Sole Tread Couture Stance",
       series: "Lug Sole Couture",
-      price: 54.99,
+      price: 5495,
+      comparePrice: 6995,
       badge: "Mega Lug",
       rating: "4.9 (1,230 reviews)",
       breadcrumb: "Stomp Series",
-      description: "Dramatic proportions, aggressive lugged rubber treads, and excessive foam heights make the Stomp Platform the statement shoe of streetwear season.",
+      description: "Dramatic proportions, aggressive lugged rubber treads, and excessive foam heights make the Stomp Platform the statement shoe of Indian streetwear.",
       specs: [
         { label: "Lift Height", value: "6.5cm (2.5 inches) Lug Stance" },
-        { label: "Tread Depth", value: "4mm Aggressive Traction" },
-        { label: "Weight", value: "11.2 oz Solid Foam Build" },
+        { label: "Tread Depth", value: "4mm Aggressive Monsoon Traction" },
+        { label: "Weight", value: "Solid Lightweight Foam Build" },
         { label: "Collar", value: "Low-Cut Ergonomic Slip" }
       ],
       features: [
-        "Bold, exaggerated lug sole that grips wet city pavement",
+        "Bold, exaggerated lug sole that grips wet city streets",
         "Arch-supportive footbed for comfortable all-day walking",
         "Signature Croslite™ upper with Jibbitz™ charm customization"
       ],
@@ -227,11 +233,12 @@ const CrocProducts = (function () {
       title: "Sherpa Hug Pink Edition",
       tagline: "Velvet Fleece Interior & Soft Cloud Foam Shell",
       series: "Cozy Atelier",
-      price: 54.99,
+      price: 4495,
+      comparePrice: 5495,
       badge: "Cozy Luxe",
       rating: "4.9 (1,850 reviews)",
       breadcrumb: "Pastel Warmth",
-      description: "Our signature Sherpa Hug in cotton-candy pastel pink. Lined with ultra-soft high-loft microfleece that wraps your foot in continuous gentle warmth.",
+      description: "Our signature Sherpa Hug in cotton-candy pastel pink. Lined with ultra-soft high-loft microfleece that wraps your foot in continuous gentle warmth for winter in North India.",
       specs: [
         { label: "Insulation", value: "High-Loft Microfleece Lining" },
         { label: "Strap", value: "Padded Pivoting Heel Lock" },
@@ -260,11 +267,12 @@ const CrocProducts = (function () {
       title: "Lagoon Hydro Recovery Slide",
       tagline: "Water-Channelling Grip Pods for Pool & Recovery",
       series: "Hydro Tech",
-      price: 34.99,
+      price: 2495,
+      comparePrice: 2995,
       badge: "Waterproof Grip",
       rating: "4.8 (760 reviews)",
       breadcrumb: "Hydro Active",
-      description: "Molded hydro-grip wave grooves channel surface water away instantly, preventing slipping in showers, poolside decks, and boat docks.",
+      description: "Molded hydro-grip wave grooves channel surface water away instantly, preventing slipping in showers, monsoon puddles, and resort poolside decks.",
       specs: [
         { label: "Hydro Drainage", value: "3D Wave Channel Surface" },
         { label: "Water Rating", value: "100% Submersible Hydrophobic" },

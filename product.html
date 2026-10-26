@@ -71,16 +71,20 @@
     <!-- Top Announcement Ribbon -->
     <div class="w-full bg-primary text-on-primary py-1 sm:py-1.5 px-3 sm:px-4 text-center overflow-hidden border-b border-white/10 select-none">
       <div class="w-full flex sm:hidden items-center justify-center font-label text-[10px] tracking-wider font-bold truncate">
-        <span class="text-tertiary-fixed">✦ ARCHIVE S/S 2025</span>
+        <span class="text-tertiary-fixed">✦ ALL-INDIA EXPRESS</span>
         <span class="mx-1.5 opacity-40">•</span>
-        <span>FREE SHIPPING OVER $50</span>
+        <span>FREE SHIPPING OVER ₹999</span>
+        <span class="mx-1.5 opacity-40">•</span>
+        <span class="text-secondary-fixed">COD AVAILABLE</span>
       </div>
       <div class="w-full hidden sm:flex items-center justify-center gap-4 font-label text-xs uppercase tracking-widest">
-        <span class="text-tertiary-fixed font-semibold">✦ ARCHIVE S/S 2025 DROP</span>
+        <span class="text-tertiary-fixed font-semibold">✦ ALL-INDIA EXPRESS DISPATCH</span>
         <span class="opacity-40">•</span>
-        <span>FREE SHIPPING ON ORDERS OVER $50</span>
+        <span>FREE DELIVERY ON ORDERS OVER ₹999</span>
         <span class="opacity-40">•</span>
-        <span class="text-secondary-fixed">26-PORT SNAP DOCKING SYSTEM</span>
+        <span class="text-secondary-fixed">CASH ON DELIVERY (COD) &amp; UPI ACCEPTED</span>
+        <span class="opacity-40">•</span>
+        <span>100% ORIGINAL CROSLITE™</span>
       </div>
     </div>
 
@@ -425,15 +429,37 @@
             </h1>
 
             <div class="flex items-baseline gap-3 pt-1">
-              <span class="font-headline text-3xl font-extrabold text-primary tracking-tight" id="unit-price-display">$59.99</span>
-              <span class="font-body text-base text-outline line-through" id="compare-price-display">$72.00</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label text-xs font-bold uppercase tracking-wider" id="discount-badge-display">Save 17%</span>
+              <span class="font-headline text-3xl font-extrabold text-primary tracking-tight" id="unit-price-display">₹3,995</span>
+              <span class="font-body text-base text-outline line-through" id="compare-price-display">₹4,995</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label text-xs font-bold uppercase tracking-wider" id="discount-badge-display">Save 20%</span>
               <span class="font-label text-xs text-tertiary font-bold ml-auto">+ 3 Free Charms</span>
             </div>
+            <p class="text-[11px] text-on-surface-variant font-label font-medium">Inclusive of all taxes (GST included) • Free Delivery above ₹999</p>
 
             <p class="font-body text-xs sm:text-sm text-on-surface-variant pt-1 leading-relaxed" id="product-description-text">
-              Engineered with our ultra-cushioned Croslite™ bio-foam core and an audacious 50mm (+5cm) elevated platform base. Built for bold street fits, poolside ease, and limitless custom snap charms.
+              Engineered with our ultra-cushioned Croslite™ bio-foam core and an audacious 50mm (+5cm) elevated platform base. Built for high-street fits, monsoon comfort, and limitless custom snap charms.
             </p>
+
+            <!-- Indian Pincode Delivery Estimator Widget -->
+            <div class="mt-2 p-3.5 rounded-2xl bg-surface-container-low border border-black/[0.04] flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm text-secondary">pin_drop</span>
+                  <span>Check Delivery &amp; COD Availability</span>
+                </span>
+                <span class="text-[10px] text-secondary font-bold font-label uppercase">All-India</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <input id="pincode-input" type="text" maxlength="6" placeholder="Enter 6-digit PIN (e.g. 400001)" class="h-9 px-3 rounded-xl bg-surface-container-lowest border border-black/10 text-xs w-full font-label focus:ring-1 focus:ring-primary outline-none" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                <button type="button" onclick="checkPincodeDelivery()" class="h-9 px-4 rounded-xl bg-primary hover:bg-secondary text-white font-label text-xs font-bold transition-all shrink-0 cursor-pointer">
+                  Check
+                </button>
+              </div>
+              <div id="pincode-status-msg" class="text-[11px] font-label text-on-surface-variant flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-xs text-secondary">local_shipping</span>
+                <span>Enter pincode to check dispatch speed &amp; Cash on Delivery eligibility.</span>
+              </div>
+            </div>
           </div>
 
           <!-- Colorway Swatch Matrix -->
@@ -466,32 +492,32 @@
             </div>
           </div>
 
-          <!-- Unisex Sizing Matrix -->
+          <!-- Unisex Sizing Matrix (UK / India Standard) -->
           <div class="flex flex-col gap-3 p-5 rounded-3xl bg-surface-container-lowest border border-black/[0.04] shadow-sm">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
-                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold">Unisex Sizing</span>
-                <span class="px-2 py-0.5 rounded bg-surface-container font-label text-[10px] font-bold text-on-surface-variant">US Standard</span>
+                <span class="font-label text-xs uppercase tracking-wider text-primary font-bold">Footwear Sizing</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container font-label text-[10px] font-bold text-on-surface-variant">UK / India Standard</span>
               </div>
-              <button class="font-label text-xs uppercase tracking-wider text-secondary underline font-bold hover:text-primary transition-colors" onclick="toggleModal('size-modal')" type="button">
-                Size Guide &amp; Fit
+              <button class="font-label text-xs uppercase tracking-wider text-secondary underline font-bold hover:text-primary transition-colors cursor-pointer" onclick="toggleModal('size-modal')" type="button">
+                UK / CM Size Guide
               </button>
             </div>
 
             <div class="grid grid-cols-4 gap-2 pt-1" id="size-options">
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W5 / M3</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W6 / M4</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W7 / M5</button>
-              <button class="size-btn py-2 rounded-xl bg-primary text-white font-label text-xs font-bold transition-all text-center shadow-md border border-primary" onclick="selectSize(this)" type="button">W8 / M6 ★</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W9 / M7</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W10 / M8</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W11 / M9</button>
-              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">W12 / M10</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 5 (EU 38)</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 6 (EU 39)</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 7 (EU 41)</button>
+              <button class="size-btn py-2 rounded-xl bg-primary text-white font-label text-xs font-bold transition-all text-center shadow-md border border-primary" onclick="selectSize(this)" type="button">UK 8 (EU 42) ★</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 9 (EU 43)</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 10 (EU 44)</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 11 (EU 45)</button>
+              <button class="size-btn py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label text-xs font-bold transition-all text-center border border-black/5" onclick="selectSize(this)" type="button">UK 12 (EU 46)</button>
             </div>
 
             <div class="flex items-center gap-1.5 pt-1 font-body text-xs text-on-surface-variant">
               <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-              <span>Roomy relaxed fit. Sizing down recommended if between sizes.</span>
+              <span>Standard Indian / UK sizing. Generous fit — order your standard Indian footwear size.</span>
             </div>
           </div>
 
@@ -568,46 +594,46 @@
               </div>
 
               <div class="grid grid-cols-6 gap-2" id="charm-button-grid">
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-smiley" onclick="toggleCharm('smiley', 'mood', '#FFE087', 'Smiley', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">mood</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-cricket" onclick="toggleCharm('cricket', 'sports_cricket', '#22C55E', 'Cricket 🏏', event)" type="button" title="Cricket Charm">
+                  <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-700 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    🏏
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Smiley</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Cricket</span>
                 </button>
 
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-moon" onclick="toggleCharm('moon', 'dark_mode', '#FFDAD2', 'Moon', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">dark_mode</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-diya" onclick="toggleCharm('diya', 'flare', '#F59E0B', 'Diya 🪔', event)" type="button" title="Diya Charm">
+                  <div class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-700 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    🪔
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Moon</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Diya</span>
                 </button>
 
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-controller" onclick="toggleCharm('controller', 'sports_esports', '#E3E2E6', 'Gamer', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-surface-variant flex items-center justify-center text-on-surface group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">sports_esports</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-auto" onclick="toggleCharm('auto', 'local_taxi', '#EAB308', 'Auto 🛺', event)" type="button" title="Auto Rickshaw Charm">
+                  <div class="w-7 h-7 rounded-full bg-yellow-500/20 text-yellow-700 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    🛺
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Gamer</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Auto</span>
                 </button>
 
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-flower" onclick="toggleCharm('flower', 'local_florist', '#FFD027', 'Daisy', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-[#FFD027] flex items-center justify-center text-primary group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">local_florist</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-chai" onclick="toggleCharm('chai', 'local_cafe', '#B45309', 'Chai ☕', event)" type="button" title="Cutting Chai Charm">
+                  <div class="w-7 h-7 rounded-full bg-amber-600/20 text-amber-800 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    ☕
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Daisy</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Chai</span>
                 </button>
 
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-bolt" onclick="toggleCharm('bolt', 'bolt', '#FE5D39', 'Bolt', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">bolt</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-nazar" onclick="toggleCharm('nazar', 'visibility', '#0284C7', 'Evil Eye 🧿', event)" type="button" title="Nazar Evil Eye Charm">
+                  <div class="w-7 h-7 rounded-full bg-sky-500/20 text-sky-700 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    🧿
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Bolt</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Nazar</span>
                 </button>
 
-                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group" id="charm-btn-star" onclick="toggleCharm('star', 'grade', '#CFA600', 'Star', event)" type="button">
-                  <div class="w-7 h-7 rounded-full bg-tertiary-container flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-xs">
-                    <span class="material-symbols-outlined text-base">grade</span>
+                <button class="charm-item p-2 rounded-2xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center gap-1 shadow-sm transition-all border border-black/5 active:scale-95 group cursor-pointer" id="charm-btn-peacock" onclick="toggleCharm('peacock', 'eco', '#0D9488', 'Peacock 🦚', event)" type="button" title="Royal Peacock Charm">
+                  <div class="w-7 h-7 rounded-full bg-teal-500/20 text-teal-800 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs text-sm">
+                    🦚
                   </div>
-                  <span class="font-label text-[10px] text-on-surface font-bold">Star</span>
+                  <span class="font-label text-[10px] text-on-surface font-bold truncate w-full text-center">Peacock</span>
                 </button>
               </div>
             </div>
@@ -624,23 +650,39 @@
             <div class="flex items-center gap-3">
               <!-- Quantity Capsule -->
               <div class="h-12 sm:h-13 px-3 rounded-full bg-surface-container-lowest border border-black/10 shadow-sm flex items-center gap-2">
-                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold" onclick="adjustQty(-1)" type="button">-</button>
+                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold cursor-pointer" onclick="adjustQty(-1)" type="button">-</button>
                 <span class="font-headline font-bold text-base text-primary px-2 select-none" id="order-qty">1</span>
-                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold" onclick="adjustQty(1)" type="button">+</button>
+                <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-90 font-bold cursor-pointer" onclick="adjustQty(1)" type="button">+</button>
               </div>
 
               <!-- Add to Bag Shimmer CTA -->
-              <button class="relative overflow-hidden flex-1 h-12 sm:h-13 rounded-full bg-primary hover:bg-secondary text-white font-label text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all active:scale-[0.98] shimmer-active font-bold group" id="add-to-cart-btn" onclick="triggerAddToCart()" type="button">
+              <button class="relative overflow-hidden flex-1 h-12 sm:h-13 rounded-full bg-primary hover:bg-secondary text-white font-label text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all active:scale-[0.98] shimmer-active font-bold group cursor-pointer" id="add-to-cart-btn" onclick="triggerAddToCart()" type="button">
                 <span class="material-symbols-outlined transition-transform group-hover:scale-110 text-lg">shopping_bag</span>
-                <span>Add To Bag • <span id="total-button-price">$59.99</span></span>
+                <span>Add To Bag • <span id="total-button-price">₹3,995</span></span>
               </button>
             </div>
 
-            <!-- ShopPay Express Button -->
-            <button onclick="triggerFastCheckout()" class="w-full h-11 rounded-full bg-[#5A31F4] text-white font-label text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:brightness-110 transition-all active:scale-98 font-bold" type="button">
-              <span>Fast Checkout with</span>
-              <span class="font-bold tracking-tight text-base leading-none">ShopPay</span>
+            <!-- Instant Checkout Button: UPI / COD -->
+            <button onclick="triggerFastCheckout()" class="w-full h-12 rounded-full bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-label text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all active:scale-98 font-bold cursor-pointer" type="button">
+              <span class="material-symbols-outlined text-sm">flash_on</span>
+              <span>Instant Buy with UPI / GPay / PhonePe / COD</span>
             </button>
+
+            <!-- Trust Badges Under Checkout -->
+            <div class="flex items-center justify-between text-[11px] font-label text-on-surface-variant px-1 pt-1">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-secondary">verified</span>
+                <span>100% Original Croslite™</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-secondary">water_drop</span>
+                <span>Monsoon Ready</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-secondary">sync</span>
+                <span>Easy 7-Day Exchange</span>
+              </span>
+            </div>
           </div>
 
           <!-- Smooth Accordion Drawers -->
@@ -872,38 +914,39 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-secondary">straighten</span>
-            <h3 class="font-headline font-bold text-xl text-primary">Unisex Sizing Guide</h3>
+            <h3 class="font-headline font-bold text-xl text-primary">Official UK / India Sizing Guide</h3>
           </div>
-          <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="toggleModal('size-modal')" type="button">
+          <button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" onclick="toggleModal('size-modal')" type="button">
             <span class="material-symbols-outlined text-base">close</span>
           </button>
         </div>
         <p class="font-body text-xs text-on-surface-variant">
-          CrocKicks Platform clogs fit relaxed with generous forefoot width. Reference the dual-size conversion below:
+          CrocKicks follow standard <strong>UK / India (IND) footwear sizing</strong>. If you are between sizes, we recommend rounding down for a locked-in fit.
         </p>
         <div class="overflow-x-auto rounded-xl border border-black/[0.05]">
           <table class="w-full text-left font-body text-xs">
             <thead>
               <tr class="font-label uppercase bg-surface-container-low text-primary">
-                <th class="p-3">US Women</th>
-                <th class="p-3">US Men</th>
+                <th class="p-3">UK / India</th>
                 <th class="p-3">EU Size</th>
+                <th class="p-3">US Men</th>
+                <th class="p-3">US Women</th>
                 <th class="p-3">Foot Length</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-black/[0.05] text-on-surface-variant">
-              <tr><td class="p-3 font-bold text-primary">W5</td><td class="p-3">M3</td><td class="p-3">35</td><td class="p-3">8.7"</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W6</td><td class="p-3">M4</td><td class="p-3">36-37</td><td class="p-3">9.0"</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W7</td><td class="p-3">M5</td><td class="p-3">37-38</td><td class="p-3">9.4"</td></tr>
-              <tr class="bg-secondary-fixed/40"><td class="p-3 font-bold text-secondary">W8</td><td class="p-3 font-bold text-secondary">M6</td><td class="p-3 font-bold text-secondary">38-39</td><td class="p-3 font-bold text-secondary">9.7" (Most Popular)</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W9</td><td class="p-3">M7</td><td class="p-3">39-40</td><td class="p-3">10.0"</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W10</td><td class="p-3">M8</td><td class="p-3">41-42</td><td class="p-3">10.4"</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W11</td><td class="p-3">M9</td><td class="p-3">42-43</td><td class="p-3">10.7"</td></tr>
-              <tr><td class="p-3 font-bold text-primary">W12</td><td class="p-3">M10</td><td class="p-3">43-44</td><td class="p-3">11.0"</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 5</td><td class="p-3">38</td><td class="p-3">M6</td><td class="p-3">W7</td><td class="p-3">23.8 cm</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 6</td><td class="p-3">39/40</td><td class="p-3">M7</td><td class="p-3">W8</td><td class="p-3">24.6 cm</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 7</td><td class="p-3">41</td><td class="p-3">M8</td><td class="p-3">W9</td><td class="p-3">25.5 cm</td></tr>
+              <tr class="bg-secondary-fixed/40"><td class="p-3 font-bold text-secondary">UK 8 ★</td><td class="p-3 font-bold text-secondary">42</td><td class="p-3 font-bold text-secondary">M9</td><td class="p-3 font-bold text-secondary">W10</td><td class="p-3 font-bold text-secondary">26.3 cm (Popular)</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 9</td><td class="p-3">43</td><td class="p-3">M10</td><td class="p-3">W11</td><td class="p-3">27.2 cm</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 10</td><td class="p-3">44</td><td class="p-3">M11</td><td class="p-3">W12</td><td class="p-3">28.0 cm</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 11</td><td class="p-3">45</td><td class="p-3">M12</td><td class="p-3">W13</td><td class="p-3">28.8 cm</td></tr>
+              <tr><td class="p-3 font-bold text-primary">UK 12</td><td class="p-3">46</td><td class="p-3">M13</td><td class="p-3">W14</td><td class="p-3">29.7 cm</td></tr>
             </tbody>
           </table>
         </div>
-        <button class="w-full h-11 rounded-full bg-primary text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors" onclick="toggleModal('size-modal')" type="button">
+        <button class="w-full h-11 rounded-full bg-primary text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors cursor-pointer" onclick="toggleModal('size-modal')" type="button">
           Got It, Return to Shoe
         </button>
       </div>
@@ -981,9 +1024,9 @@
         <div>
           <h4 class="font-label text-xs uppercase tracking-wider text-primary font-bold mb-3">Trust &amp; Security</h4>
           <ul class="space-y-2 text-xs text-on-surface-variant">
-            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-tertiary">verified</span> Authentic Croslite™</li>
-            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-secondary">local_shipping</span> Free US Shipping $50+</li>
-            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-primary">lock</span> 256-Bit SSL Encrypted</li>
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-tertiary">verified</span> Authentic Croslite™ Foam</li>
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-secondary">local_shipping</span> Free All-India Shipping ₹999+</li>
+            <li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-primary">qr_code_2</span> Instant UPI &amp; Cash on Delivery</li>
           </ul>
         </div>
       </div>
@@ -1123,8 +1166,8 @@
       CrocCart.showToast(`Selected shade: ${colorName}`);
     }
 
-    // UNISEX SIZING PICKER
-    let activeSize = 'W8 / M6';
+    // UNISEX SIZING PICKER (UK / India Standard)
+    let activeSize = 'UK 8 (EU 42)';
     function selectSize(btn) {
       CrocCart.playAcousticPop(490);
       activeSize = btn.innerText.replace('★', '').trim();
@@ -1134,12 +1177,29 @@
       });
       btn.classList.remove('bg-surface-container-low', 'text-on-surface', 'border-black/5');
       btn.classList.add('bg-primary', 'text-white', 'shadow-md', 'border-primary');
+      CrocCart.showToast(`Size selected: ${activeSize}`);
+    }
+
+    // INDIAN PINCODE DELIVERY ESTIMATOR
+    function checkPincodeDelivery() {
+      const input = document.getElementById('pincode-input');
+      const msg = document.getElementById('pincode-status-msg');
+      if (!input || !msg) return;
+      const pin = input.value.trim();
+      if (pin.length !== 6) {
+        CrocCart.playAcousticPop(320);
+        msg.innerHTML = '<span class="material-symbols-outlined text-xs text-red-500">error</span><span class="text-red-500">Please enter a valid 6-digit Indian PIN code.</span>';
+        return;
+      }
+      CrocCart.playAcousticPop(640);
+      msg.innerHTML = `<span class="material-symbols-outlined text-xs text-emerald-600">check_circle</span><span class="text-emerald-700 font-bold">⚡ Express Delivery by Tomorrow to ${pin} • Cash on Delivery (COD) Available • Free Returns!</span>`;
+      CrocCart.showToast(`PIN ${pin} verified! Express delivery available.`);
     }
 
     // JIBBITZ SNAP DOCKING & RADIAL PARTICLE BURST
     let activeCharms = [];
-    let basePrice = 59.99;
-    const charmExtraUnitPrice = 4.00;
+    let basePrice = 3995;
+    const charmExtraUnitPrice = 249; // ₹249 for extra charms beyond 3 free
     const freeCharmsIncluded = 3;
     let orderQuantity = 1;
 
@@ -1206,10 +1266,10 @@
         CrocCart.showToast(`Removed charm from Port #${portIndex}`);
       } else {
         const defaults = [
-          { id: 'smiley', icon: 'mood', color: '#FFE087', label: 'Smiley' },
-          { id: 'bolt', icon: 'bolt', color: '#FE5D39', label: 'Bolt' },
-          { id: 'star', icon: 'grade', color: '#CFA600', label: 'Star' },
-          { id: 'flower', icon: 'local_florist', color: '#FFD027', label: 'Daisy' }
+          { id: 'cricket', icon: 'sports_cricket', color: '#22C55E', label: 'Cricket 🏏' },
+          { id: 'diya', icon: 'flare', color: '#F59E0B', label: 'Diya 🪔' },
+          { id: 'auto', icon: 'local_taxi', color: '#EAB308', label: 'Auto 🛺' },
+          { id: 'chai', icon: 'local_cafe', color: '#B45309', label: 'Chai ☕' }
         ];
         const candidate = defaults.find(d => !activeCharms.some(c => c.id === d.id)) || defaults[0];
         activeCharms.push(candidate);
@@ -1241,8 +1301,8 @@
 
         if (charm) {
           port.innerHTML = `
-            <span class="material-symbols-outlined text-lg animate-bounce" style="color: ${charm.color}; font-variation-settings: 'FILL' 1;">${charm.icon}</span>
-            <span class="font-label text-[8px] sm:text-[9px] font-bold text-primary truncate max-w-full leading-tight mt-0.5">${charm.label}</span>
+            <span class="text-xl animate-bounce">${charm.label.split(' ')[1] || '✨'}</span>
+            <span class="font-label text-[8px] sm:text-[9px] font-bold text-primary truncate max-w-full leading-tight mt-0.5">${charm.label.split(' ')[0]}</span>
           `;
           port.classList.remove('border-dashed', 'border-black/15');
           port.classList.add('border-solid', 'border-secondary', 'bg-white', 'shadow-md', 'scale-105');
@@ -1274,16 +1334,16 @@
       const extraCount = Math.max(0, activeCharms.length - freeCharmsIncluded);
       const extraCost = extraCount * charmExtraUnitPrice;
       const shoeTotal = basePrice + extraCost;
-      const grandTotal = (shoeTotal * orderQuantity).toFixed(2);
+      const grandTotal = shoeTotal * orderQuantity;
 
       const charmPriceReadout = document.getElementById('charm-extra-price');
       if (extraCost > 0) {
-        charmPriceReadout.innerText = `+$${extraCost.toFixed(2)} (${extraCount} billable)`;
+        charmPriceReadout.innerText = `+${CrocCart.formatPrice(extraCost)} (${extraCount} billable)`;
       } else {
         charmPriceReadout.innerText = 'Free (3 Promo Applied)';
       }
 
-      document.getElementById('total-button-price').innerText = `$${grandTotal}`;
+      document.getElementById('total-button-price').innerText = CrocCart.formatPrice(grandTotal);
     }
 
     // ACCORDION EXPANSION
@@ -1357,7 +1417,7 @@
         price: price,
         quantity: 1,
         color: 'Signature Colorway',
-        size: 'US Men 8 / Women 10',
+        size: 'UK 8 (India / Men)',
         badge: 'Popular',
         image: image || studioAngles[0],
         details: '100% Water-Ready Bio-Foam'
@@ -1417,10 +1477,10 @@
       if (ratingEl) ratingEl.innerText = currentProduct.rating || '4.92 (1,420 reviews)';
 
       const unitPriceEl = document.getElementById('unit-price-display');
-      if (unitPriceEl) unitPriceEl.innerText = `$${currentProduct.price.toFixed(2)}`;
+      if (unitPriceEl) unitPriceEl.innerText = CrocCart.formatPrice(currentProduct.price);
 
       const comparePriceEl = document.getElementById('compare-price-display');
-      if (comparePriceEl) comparePriceEl.innerText = `$${(currentProduct.price * 1.25).toFixed(2)}`;
+      if (comparePriceEl) comparePriceEl.innerText = CrocCart.formatPrice(currentProduct.comparePrice || Math.round(currentProduct.price * 1.25));
 
       const descEl = document.getElementById('product-description-text');
       if (descEl) descEl.innerText = currentProduct.description;
@@ -1477,7 +1537,7 @@
         applyColorTo3DModel(first.hex);
 
         swatchList.innerHTML = currentProduct.colorways.map((cw, idx) => `
-          <button class="color-dot relative w-10 h-10 rounded-full shadow-sm transition-all ${idx === 0 ? 'scale-110 border-2 border-primary' : 'hover:scale-110 border-2 border-transparent'} flex items-center justify-center" 
+          <button class="color-dot relative w-10 h-10 rounded-full shadow-sm transition-all ${idx === 0 ? 'scale-110 border-2 border-primary' : 'hover:scale-110 border-2 border-transparent'} flex items-center justify-center cursor-pointer" 
             style="background-color: ${cw.hex};" 
             onclick="selectColor(this, '${cw.name.replace(/'/g, "\\'")}', '${cw.hex}', '${cw.aura || 'rgba(0,0,0,0.1)'}', ${idx})" 
             title="${cw.name}" 
@@ -1534,13 +1594,13 @@
               <h3 class="font-headline font-bold text-sm text-primary tracking-tight mt-1 truncate">${rel.title}</h3>
             </a>
             <div class="flex items-center justify-between mt-auto pt-3 border-t border-black/[0.04]">
-              <span class="font-headline font-extrabold text-base text-primary">$${rel.price.toFixed(2)}</span>
+              <span class="font-headline font-extrabold text-base text-primary">${CrocCart.formatPrice(rel.price)}</span>
               <div class="flex items-center gap-1.5">
                 <a href="product.html?id=${rel.id}" class="h-8 px-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label text-[11px] font-bold flex items-center gap-1 transition-colors">
                   <span>View</span>
                   <span class="material-symbols-outlined text-xs">arrow_forward</span>
                 </a>
-                <button class="w-8 h-8 rounded-full bg-primary hover:bg-secondary text-white flex items-center justify-center transition-all shadow-sm active:scale-90" onclick="triggerQuickAdd('${rel.title.replace(/'/g, "\\'")}', ${rel.price}, '${rel.angles[0]}', '${rel.id}')" type="button" title="Quick Add">
+                <button class="w-8 h-8 rounded-full bg-primary hover:bg-secondary text-white flex items-center justify-center transition-all shadow-sm active:scale-90 cursor-pointer" onclick="triggerQuickAdd('${rel.title.replace(/'/g, "\\'")}', ${rel.price}, '${rel.angles[0]}', '${rel.id}')" type="button" title="Quick Add">
                   <span class="material-symbols-outlined text-sm">add</span>
                 </button>
               </div>
